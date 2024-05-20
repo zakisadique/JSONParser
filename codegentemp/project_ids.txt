@@ -1,6 +1,0 @@
-C:\Users\zakis\Documents\EOS_Assignment_Two\JSON_Parser\EOS_Assignment_Two\Archive\JSON_Parser.cyprj.Archive02\JSON_Parser.cydsn\JSON_Parser.cyprj|b8208b9b-e9c9-4aaf-be47-f5ec95ef5bfb
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|55b727e2-2d00-408f-ac74-df5f13dc9769
-C:\Users\zakis\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|0e3fc8ee-5f1e-48af-90c2-b7fb88e86afc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e5c569a2-dbb1-45d0-8c04-761acf43160e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f6f6c403-b969-4e3f-8e6a-cc9579ee9c68
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9fc35695-5465-46c7-8789-a0238aa24012
