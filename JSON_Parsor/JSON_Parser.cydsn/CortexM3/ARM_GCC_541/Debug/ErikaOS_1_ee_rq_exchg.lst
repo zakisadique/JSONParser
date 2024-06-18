@@ -1,0 +1,1095 @@
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ErikaOS_1_ee_rq_exchg.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.EE_rq2stk_exchange,"ax",%progbits
+  20              		.align	2
+  21              		.global	EE_rq2stk_exchange
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	EE_rq2stk_exchange, %function
+  25              	EE_rq2stk_exchange:
+  26              	.LFB59:
+  27              		.file 1 "Generated_Source\\PSoC5\\ErikaOS_1_ee_rq_exchg.c"
+   1:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+   4:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Copyright (C) 2002-2008  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+   6:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+   8:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+  13:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Linking this code statically or dynamically with other modules is
+  14:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+  18:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+  30:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * ERIKA Enterprise is distributed in the hope that it will be
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 2
+
+
+  31:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+  32:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  *
+  35:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  41:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** /*
+  42:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Author: 2002-2004 Paolo Gai
+  43:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * CVS: $Id: ee_rq_exchg.c,v 1.1 2005/07/16 12:23:42 pj Exp $
+  44:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  */
+  45:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  46:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** /*
+  47:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * PSoC Port and API Generation
+  48:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Carlos Fernando Meier Martinez
+  49:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  * Hochschule Darmstadt, Germany. 2017.
+  50:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****  */
+  51:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  52:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #include "ErikaOS_1_ee_internal.inc"
+  53:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  54:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #ifndef __PRIVATE_RQ2STK_EXCHANGE__
+  55:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  56:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #if (defined(__OO_BCC1__)) || (defined(__OO_ECC1__))
+  57:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** EE_TID EE_rq2stk_exchange(void)
+  58:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** {
+  59:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_TID temp;
+  60:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  61:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   temp = EE_rq_first;
+  62:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   
+  63:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* extract the first task from the ready queue */
+  64:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_rq_first = EE_th_next[temp]; 
+  65:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* insert the extracted task on the topo of the stack */
+  66:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_th_next[temp] = EE_stkfirst;
+  67:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_stkfirst = temp;
+  68:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  69:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   return temp;
+  70:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** }
+  71:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #endif
+  72:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  73:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+  74:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** EE_TID EE_rq2stk_exchange(void)
+  75:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** {
+  28              		.loc 1 75 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 F0B4     		push	{r4, r5, r6, r7}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 7, -4
+  76:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_INT8 x;    /* the first non-empty queue */
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 3
+
+
+  77:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_TID temp;   /* the TID to be inserted in the top of the stack */
+  78:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_TYPEPAIR y; /* used to free the descriptor */
+  79:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  80:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #if defined(__OO_ECC2__)
+  81:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* lookup at bits 15-9 */
+  82:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   x = EE_rq_lookup[(EE_rq_bitmask & 0xFF00U) >> 8];
+  39              		.loc 1 82 0
+  40 0002 184B     		ldr	r3, .L6
+  41 0004 1988     		ldrh	r1, [r3]
+  42 0006 0B0A     		lsrs	r3, r1, #8
+  43 0008 174A     		ldr	r2, .L6+4
+  44 000a D356     		ldrsb	r3, [r2, r3]
+  45              	.LVL0:
+  83:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   if (x == (EE_INT8)-1) {
+  46              		.loc 1 83 0
+  47 000c B3F1FF3F 		cmp	r3, #-1
+  48 0010 01D1     		bne	.L2
+  84:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****     x = EE_rq_lookup[EE_rq_bitmask];
+  49              		.loc 1 84 0
+  50 0012 5356     		ldrsb	r3, [r2, r1]
+  51              	.LVL1:
+  52 0014 01E0     		b	.L3
+  53              	.L2:
+  85:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   } else {
+  86:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****     x += (EE_INT8)8;
+  54              		.loc 1 86 0
+  55 0016 0833     		adds	r3, r3, #8
+  56              	.LVL2:
+  57 0018 5BB2     		sxtb	r3, r3
+  58              	.LVL3:
+  59              	.L3:
+  87:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   }
+  88:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #else
+  89:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   x = EE_rq_lookup[EE_rq_bitmask];
+  90:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** #endif
+  91:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  92:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* now x contains the highest priority non-empty queue number */
+  93:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  94:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* get the TID to insert in the stacked queue */
+  95:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   temp = EE_rq_pairs_tid[EE_rq_queues_head[x]];
+  60              		.loc 1 95 0
+  61 001a 144D     		ldr	r5, .L6+8
+  62 001c 55F82320 		ldr	r2, [r5, r3, lsl #2]
+  63 0020 1348     		ldr	r0, .L6+12
+  64 0022 50F82200 		ldr	r0, [r0, r2, lsl #2]
+  65              	.LVL4:
+  96:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+  97:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* free the descriptor */
+  98:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   y = EE_rq_queues_head[x];
+  99:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_rq_queues_head[x] = EE_rq_pairs_next[EE_rq_queues_head[x]];
+  66              		.loc 1 99 0
+  67 0026 134E     		ldr	r6, .L6+16
+  68 0028 56F82240 		ldr	r4, [r6, r2, lsl #2]
+  69 002c 45F82340 		str	r4, [r5, r3, lsl #2]
+ 100:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_rq_pairs_next[y] = EE_rq_free;
+  70              		.loc 1 100 0
+  71 0030 114D     		ldr	r5, .L6+20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 4
+
+
+  72 0032 2F68     		ldr	r7, [r5]
+  73 0034 46F82270 		str	r7, [r6, r2, lsl #2]
+ 101:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_rq_free = y;
+  74              		.loc 1 101 0
+  75 0038 2A60     		str	r2, [r5]
+ 102:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   
+ 103:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   if (EE_rq_queues_head[x] == (EE_SREG)-1) {
+  76              		.loc 1 103 0
+  77 003a B4F1FF3F 		cmp	r4, #-1
+  78 003e 09D1     		bne	.L4
+ 104:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****     EE_rq_queues_tail[x] = -1;
+  79              		.loc 1 104 0
+  80 0040 0E4A     		ldr	r2, .L6+24
+  81              	.LVL5:
+  82 0042 42F82340 		str	r4, [r2, r3, lsl #2]
+ 105:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****     /* reset the (x)th bit in the bitfield; casts are for MISRA compliance */
+ 106:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****     EE_rq_bitmask &= (EE_TYPE_RQ_MASK)~((EE_TYPE_RQ_MASK)((EE_TYPE_RQ_MASK)1U << x));
+  83              		.loc 1 106 0
+  84 0046 0122     		movs	r2, #1
+  85 0048 02FA03F3 		lsl	r3, r2, r3
+  86              	.LVL6:
+  87 004c 21EA0301 		bic	r1, r1, r3
+  88 0050 044B     		ldr	r3, .L6
+  89 0052 1980     		strh	r1, [r3]	@ movhi
+  90              	.L4:
+ 107:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   }
+ 108:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+ 109:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   /* insert the extracted task on the top of the stack */
+ 110:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_th_next[temp] = EE_stkfirst;
+  91              		.loc 1 110 0
+  92 0054 0A4B     		ldr	r3, .L6+28
+  93 0056 1968     		ldr	r1, [r3]
+  94 0058 0A4A     		ldr	r2, .L6+32
+  95 005a 42F82010 		str	r1, [r2, r0, lsl #2]
+ 111:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   EE_stkfirst = temp;
+  96              		.loc 1 111 0
+  97 005e 1860     		str	r0, [r3]
+ 112:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** 
+ 113:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c ****   return temp;
+ 114:Generated_Source\PSoC5/ErikaOS_1_ee_rq_exchg.c **** }
+  98              		.loc 1 114 0
+  99 0060 F0BC     		pop	{r4, r5, r6, r7}
+ 100              		.cfi_restore 7
+ 101              		.cfi_restore 6
+ 102              		.cfi_restore 5
+ 103              		.cfi_restore 4
+ 104              		.cfi_def_cfa_offset 0
+ 105              	.LVL7:
+ 106 0062 7047     		bx	lr
+ 107              	.L7:
+ 108              		.align	2
+ 109              	.L6:
+ 110 0064 00000000 		.word	EE_rq_bitmask
+ 111 0068 00000000 		.word	EE_rq_lookup
+ 112 006c 00000000 		.word	EE_rq_queues_head
+ 113 0070 00000000 		.word	EE_rq_pairs_tid
+ 114 0074 00000000 		.word	EE_rq_pairs_next
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 5
+
+
+ 115 0078 00000000 		.word	EE_rq_free
+ 116 007c 00000000 		.word	EE_rq_queues_tail
+ 117 0080 00000000 		.word	EE_stkfirst
+ 118 0084 00000000 		.word	EE_th_next
+ 119              		.cfi_endproc
+ 120              	.LFE59:
+ 121              		.size	EE_rq2stk_exchange, .-EE_rq2stk_exchange
+ 122              		.text
+ 123              	.Letext0:
+ 124              		.file 2 "Generated_Source\\PSoC5\\ErikaOS_1_common_ee_types.inc"
+ 125              		.file 3 "Generated_Source\\PSoC5\\ErikaOS_1_cortex_mx_ee_cpu.inc"
+ 126              		.file 4 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_common.inc"
+ 127              		.file 5 "Generated_Source\\PSoC5\\ErikaOS_1_common_ee_primitives.inc"
+ 128              		.file 6 "Generated_Source\\PSoC5\\ErikaOS_1_cortex_mx_ee_context.inc"
+ 129              		.file 7 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_intfunc.inc"
+ 130              		.file 8 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_internal.inc"
+ 131              		.section	.debug_info,"",%progbits
+ 132              	.Ldebug_info0:
+ 133 0000 9F020000 		.4byte	0x29f
+ 134 0004 0400     		.2byte	0x4
+ 135 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 136 000a 04       		.byte	0x4
+ 137 000b 01       		.uleb128 0x1
+ 138 000c 8D020000 		.4byte	.LASF43
+ 139 0010 0C       		.byte	0xc
+ 140 0011 00000000 		.4byte	.LASF44
+ 141 0015 33030000 		.4byte	.LASF45
+ 142 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 143 001d 00000000 		.4byte	0
+ 144 0021 00000000 		.4byte	.Ldebug_line0
+ 145 0025 02       		.uleb128 0x2
+ 146 0026 01       		.byte	0x1
+ 147 0027 06       		.byte	0x6
+ 148 0028 6C010000 		.4byte	.LASF0
+ 149 002c 02       		.uleb128 0x2
+ 150 002d 01       		.byte	0x1
+ 151 002e 08       		.byte	0x8
+ 152 002f 56010000 		.4byte	.LASF1
+ 153 0033 02       		.uleb128 0x2
+ 154 0034 02       		.byte	0x2
+ 155 0035 05       		.byte	0x5
+ 156 0036 5A000000 		.4byte	.LASF2
+ 157 003a 02       		.uleb128 0x2
+ 158 003b 02       		.byte	0x2
+ 159 003c 07       		.byte	0x7
+ 160 003d CA010000 		.4byte	.LASF3
+ 161 0041 02       		.uleb128 0x2
+ 162 0042 04       		.byte	0x4
+ 163 0043 05       		.byte	0x5
+ 164 0044 F5000000 		.4byte	.LASF4
+ 165 0048 02       		.uleb128 0x2
+ 166 0049 04       		.byte	0x4
+ 167 004a 07       		.byte	0x7
+ 168 004b FA010000 		.4byte	.LASF5
+ 169 004f 02       		.uleb128 0x2
+ 170 0050 08       		.byte	0x8
+ 171 0051 05       		.byte	0x5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 6
+
+
+ 172 0052 CF000000 		.4byte	.LASF6
+ 173 0056 02       		.uleb128 0x2
+ 174 0057 08       		.byte	0x8
+ 175 0058 07       		.byte	0x7
+ 176 0059 78010000 		.4byte	.LASF7
+ 177 005d 03       		.uleb128 0x3
+ 178 005e 04       		.byte	0x4
+ 179 005f 05       		.byte	0x5
+ 180 0060 696E7400 		.ascii	"int\000"
+ 181 0064 02       		.uleb128 0x2
+ 182 0065 04       		.byte	0x4
+ 183 0066 07       		.byte	0x7
+ 184 0067 8F010000 		.4byte	.LASF8
+ 185 006b 02       		.uleb128 0x2
+ 186 006c 08       		.byte	0x8
+ 187 006d 04       		.byte	0x4
+ 188 006e 4A010000 		.4byte	.LASF9
+ 189 0072 04       		.uleb128 0x4
+ 190 0073 DD000000 		.4byte	.LASF10
+ 191 0077 02       		.byte	0x2
+ 192 0078 3F       		.byte	0x3f
+ 193 0079 25000000 		.4byte	0x25
+ 194 007d 04       		.uleb128 0x4
+ 195 007e DD010000 		.4byte	.LASF11
+ 196 0082 02       		.byte	0x2
+ 197 0083 52       		.byte	0x52
+ 198 0084 3A000000 		.4byte	0x3a
+ 199 0088 04       		.uleb128 0x4
+ 200 0089 C1010000 		.4byte	.LASF12
+ 201 008d 02       		.byte	0x2
+ 202 008e 53       		.byte	0x53
+ 203 008f 5D000000 		.4byte	0x5d
+ 204 0093 04       		.uleb128 0x4
+ 205 0094 75000000 		.4byte	.LASF13
+ 206 0098 02       		.byte	0x2
+ 207 0099 54       		.byte	0x54
+ 208 009a 64000000 		.4byte	0x64
+ 209 009e 04       		.uleb128 0x4
+ 210 009f 2F000000 		.4byte	.LASF14
+ 211 00a3 03       		.byte	0x3
+ 212 00a4 4D       		.byte	0x4d
+ 213 00a5 93000000 		.4byte	0x93
+ 214 00a9 04       		.uleb128 0x4
+ 215 00aa 64010000 		.4byte	.LASF15
+ 216 00ae 03       		.byte	0x3
+ 217 00af 4E       		.byte	0x4e
+ 218 00b0 88000000 		.4byte	0x88
+ 219 00b4 04       		.uleb128 0x4
+ 220 00b5 6D000000 		.4byte	.LASF16
+ 221 00b9 03       		.byte	0x3
+ 222 00ba 4F       		.byte	0x4f
+ 223 00bb 93000000 		.4byte	0x93
+ 224 00bf 04       		.uleb128 0x4
+ 225 00c0 0C020000 		.4byte	.LASF17
+ 226 00c4 03       		.byte	0x3
+ 227 00c5 54       		.byte	0x54
+ 228 00c6 9E000000 		.4byte	0x9e
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 7
+
+
+ 229 00ca 04       		.uleb128 0x4
+ 230 00cb A2000000 		.4byte	.LASF18
+ 231 00cf 03       		.byte	0x3
+ 232 00d0 78       		.byte	0x78
+ 233 00d1 88000000 		.4byte	0x88
+ 234 00d5 05       		.uleb128 0x5
+ 235 00d6 E5000000 		.4byte	.LASF19
+ 236 00da 04       		.byte	0x4
+ 237 00db 1101     		.2byte	0x111
+ 238 00dd 7D000000 		.4byte	0x7d
+ 239 00e1 06       		.uleb128 0x6
+ 240 00e2 37010000 		.4byte	.LASF46
+ 241 00e6 01       		.byte	0x1
+ 242 00e7 4A       		.byte	0x4a
+ 243 00e8 CA000000 		.4byte	0xca
+ 244 00ec 00000000 		.4byte	.LFB59
+ 245 00f0 88000000 		.4byte	.LFE59-.LFB59
+ 246 00f4 01       		.uleb128 0x1
+ 247 00f5 9C       		.byte	0x9c
+ 248 00f6 22010000 		.4byte	0x122
+ 249 00fa 07       		.uleb128 0x7
+ 250 00fb 7800     		.ascii	"x\000"
+ 251 00fd 01       		.byte	0x1
+ 252 00fe 4C       		.byte	0x4c
+ 253 00ff 72000000 		.4byte	0x72
+ 254 0103 00000000 		.4byte	.LLST0
+ 255 0107 08       		.uleb128 0x8
+ 256 0108 55000000 		.4byte	.LASF20
+ 257 010c 01       		.byte	0x1
+ 258 010d 4D       		.byte	0x4d
+ 259 010e CA000000 		.4byte	0xca
+ 260 0112 01       		.uleb128 0x1
+ 261 0113 50       		.byte	0x50
+ 262 0114 07       		.uleb128 0x7
+ 263 0115 7900     		.ascii	"y\000"
+ 264 0117 01       		.byte	0x1
+ 265 0118 4E       		.byte	0x4e
+ 266 0119 A9000000 		.4byte	0xa9
+ 267 011d 2B000000 		.4byte	.LLST1
+ 268 0121 00       		.byte	0
+ 269 0122 09       		.uleb128 0x9
+ 270 0123 BA000000 		.4byte	.LASF21
+ 271 0127 05       		.byte	0x5
+ 272 0128 44       		.byte	0x44
+ 273 0129 9E000000 		.4byte	0x9e
+ 274 012d 09       		.uleb128 0x9
+ 275 012e A8010000 		.4byte	.LASF22
+ 276 0132 06       		.byte	0x6
+ 277 0133 48       		.byte	0x48
+ 278 0134 CA000000 		.4byte	0xca
+ 279 0138 0A       		.uleb128 0xa
+ 280 0139 4F010000 		.4byte	0x14f
+ 281 013d 48010000 		.4byte	0x148
+ 282 0141 0B       		.uleb128 0xb
+ 283 0142 48010000 		.4byte	0x148
+ 284 0146 02       		.byte	0x2
+ 285 0147 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 8
+
+
+ 286 0148 02       		.uleb128 0x2
+ 287 0149 04       		.byte	0x4
+ 288 014a 07       		.byte	0x7
+ 289 014b 64000000 		.4byte	.LASF23
+ 290 014f 0C       		.uleb128 0xc
+ 291 0150 9E000000 		.4byte	0x9e
+ 292 0154 09       		.uleb128 0x9
+ 293 0155 7F000000 		.4byte	.LASF24
+ 294 0159 04       		.byte	0x4
+ 295 015a B2       		.byte	0xb2
+ 296 015b 5F010000 		.4byte	0x15f
+ 297 015f 0C       		.uleb128 0xc
+ 298 0160 38010000 		.4byte	0x138
+ 299 0164 09       		.uleb128 0x9
+ 300 0165 5C020000 		.4byte	.LASF25
+ 301 0169 04       		.byte	0x4
+ 302 016a B3       		.byte	0xb3
+ 303 016b 6F010000 		.4byte	0x16f
+ 304 016f 0C       		.uleb128 0xc
+ 305 0170 38010000 		.4byte	0x138
+ 306 0174 0A       		.uleb128 0xa
+ 307 0175 9E000000 		.4byte	0x9e
+ 308 0179 84010000 		.4byte	0x184
+ 309 017d 0B       		.uleb128 0xb
+ 310 017e 48010000 		.4byte	0x148
+ 311 0182 02       		.byte	0x2
+ 312 0183 00       		.byte	0
+ 313 0184 09       		.uleb128 0x9
+ 314 0185 4F020000 		.4byte	.LASF26
+ 315 0189 04       		.byte	0x4
+ 316 018a CA       		.byte	0xca
+ 317 018b 74010000 		.4byte	0x174
+ 318 018f 0A       		.uleb128 0xa
+ 319 0190 CA000000 		.4byte	0xca
+ 320 0194 9F010000 		.4byte	0x19f
+ 321 0198 0B       		.uleb128 0xb
+ 322 0199 48010000 		.4byte	0x148
+ 323 019d 02       		.byte	0x2
+ 324 019e 00       		.byte	0
+ 325 019f 09       		.uleb128 0x9
+ 326 01a0 70020000 		.4byte	.LASF27
+ 327 01a4 04       		.byte	0x4
+ 328 01a5 D2       		.byte	0xd2
+ 329 01a6 8F010000 		.4byte	0x18f
+ 330 01aa 09       		.uleb128 0x9
+ 331 01ab 9C010000 		.4byte	.LASF28
+ 332 01af 04       		.byte	0x4
+ 333 01b0 DA       		.byte	0xda
+ 334 01b1 74010000 		.4byte	0x174
+ 335 01b5 09       		.uleb128 0x9
+ 336 01b6 18020000 		.4byte	.LASF29
+ 337 01ba 04       		.byte	0x4
+ 338 01bb E2       		.byte	0xe2
+ 339 01bc CA000000 		.4byte	0xca
+ 340 01c0 09       		.uleb128 0x9
+ 341 01c1 28010000 		.4byte	.LASF30
+ 342 01c5 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 9
+
+
+ 343 01c6 F7       		.byte	0xf7
+ 344 01c7 9E000000 		.4byte	0x9e
+ 345 01cb 0A       		.uleb128 0xa
+ 346 01cc A9000000 		.4byte	0xa9
+ 347 01d0 DB010000 		.4byte	0x1db
+ 348 01d4 0B       		.uleb128 0xb
+ 349 01d5 48010000 		.4byte	0x148
+ 350 01d9 0F       		.byte	0xf
+ 351 01da 00       		.byte	0
+ 352 01db 0D       		.uleb128 0xd
+ 353 01dc 90000000 		.4byte	.LASF31
+ 354 01e0 04       		.byte	0x4
+ 355 01e1 2501     		.2byte	0x125
+ 356 01e3 CB010000 		.4byte	0x1cb
+ 357 01e7 0D       		.uleb128 0xd
+ 358 01e8 7B020000 		.4byte	.LASF32
+ 359 01ec 04       		.byte	0x4
+ 360 01ed 2601     		.2byte	0x126
+ 361 01ef CB010000 		.4byte	0x1cb
+ 362 01f3 0A       		.uleb128 0xa
+ 363 01f4 A9000000 		.4byte	0xa9
+ 364 01f8 03020000 		.4byte	0x203
+ 365 01fc 0B       		.uleb128 0xb
+ 366 01fd 48010000 		.4byte	0x148
+ 367 0201 02       		.byte	0x2
+ 368 0202 00       		.byte	0
+ 369 0203 0D       		.uleb128 0xd
+ 370 0204 17010000 		.4byte	.LASF33
+ 371 0208 04       		.byte	0x4
+ 372 0209 2C01     		.2byte	0x12c
+ 373 020b F3010000 		.4byte	0x1f3
+ 374 020f 0D       		.uleb128 0xd
+ 375 0210 24020000 		.4byte	.LASF34
+ 376 0214 04       		.byte	0x4
+ 377 0215 3C01     		.2byte	0x13c
+ 378 0217 8F010000 		.4byte	0x18f
+ 379 021b 0D       		.uleb128 0xd
+ 380 021c 34020000 		.4byte	.LASF35
+ 381 0220 04       		.byte	0x4
+ 382 0221 3F01     		.2byte	0x13f
+ 383 0223 D5000000 		.4byte	0xd5
+ 384 0227 0D       		.uleb128 0xd
+ 385 0228 37000000 		.4byte	.LASF36
+ 386 022c 04       		.byte	0x4
+ 387 022d 4101     		.2byte	0x141
+ 388 022f A9000000 		.4byte	0xa9
+ 389 0233 0D       		.uleb128 0xd
+ 390 0234 42000000 		.4byte	.LASF37
+ 391 0238 04       		.byte	0x4
+ 392 0239 5C01     		.2byte	0x15c
+ 393 023b 74010000 		.4byte	0x174
+ 394 023f 0A       		.uleb128 0xa
+ 395 0240 BF000000 		.4byte	0xbf
+ 396 0244 4F020000 		.4byte	0x24f
+ 397 0248 0B       		.uleb128 0xb
+ 398 0249 48010000 		.4byte	0x148
+ 399 024d 02       		.byte	0x2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 10
+
+
+ 400 024e 00       		.byte	0
+ 401 024f 0D       		.uleb128 0xd
+ 402 0250 A9000000 		.4byte	.LASF38
+ 403 0254 04       		.byte	0x4
+ 404 0255 6701     		.2byte	0x167
+ 405 0257 3F020000 		.4byte	0x23f
+ 406 025b 09       		.uleb128 0x9
+ 407 025c 1B030000 		.4byte	.LASF39
+ 408 0260 07       		.byte	0x7
+ 409 0261 40       		.byte	0x40
+ 410 0262 9E000000 		.4byte	0x9e
+ 411 0266 09       		.uleb128 0x9
+ 412 0267 FE000000 		.4byte	.LASF40
+ 413 026b 07       		.byte	0x7
+ 414 026c 47       		.byte	0x47
+ 415 026d B4000000 		.4byte	0xb4
+ 416 0271 09       		.uleb128 0x9
+ 417 0272 E7010000 		.4byte	.LASF41
+ 418 0276 07       		.byte	0x7
+ 419 0277 4A       		.byte	0x4a
+ 420 0278 9E000000 		.4byte	0x9e
+ 421 027c 0A       		.uleb128 0xa
+ 422 027d 8C020000 		.4byte	0x28c
+ 423 0281 8C020000 		.4byte	0x28c
+ 424 0285 0B       		.uleb128 0xb
+ 425 0286 48010000 		.4byte	0x148
+ 426 028a FF       		.byte	0xff
+ 427 028b 00       		.byte	0
+ 428 028c 0C       		.uleb128 0xc
+ 429 028d 72000000 		.4byte	0x72
+ 430 0291 0D       		.uleb128 0xd
+ 431 0292 42020000 		.4byte	.LASF42
+ 432 0296 08       		.byte	0x8
+ 433 0297 AB01     		.2byte	0x1ab
+ 434 0299 9D020000 		.4byte	0x29d
+ 435 029d 0C       		.uleb128 0xc
+ 436 029e 7C020000 		.4byte	0x27c
+ 437 02a2 00       		.byte	0
+ 438              		.section	.debug_abbrev,"",%progbits
+ 439              	.Ldebug_abbrev0:
+ 440 0000 01       		.uleb128 0x1
+ 441 0001 11       		.uleb128 0x11
+ 442 0002 01       		.byte	0x1
+ 443 0003 25       		.uleb128 0x25
+ 444 0004 0E       		.uleb128 0xe
+ 445 0005 13       		.uleb128 0x13
+ 446 0006 0B       		.uleb128 0xb
+ 447 0007 03       		.uleb128 0x3
+ 448 0008 0E       		.uleb128 0xe
+ 449 0009 1B       		.uleb128 0x1b
+ 450 000a 0E       		.uleb128 0xe
+ 451 000b 55       		.uleb128 0x55
+ 452 000c 17       		.uleb128 0x17
+ 453 000d 11       		.uleb128 0x11
+ 454 000e 01       		.uleb128 0x1
+ 455 000f 10       		.uleb128 0x10
+ 456 0010 17       		.uleb128 0x17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 11
+
+
+ 457 0011 00       		.byte	0
+ 458 0012 00       		.byte	0
+ 459 0013 02       		.uleb128 0x2
+ 460 0014 24       		.uleb128 0x24
+ 461 0015 00       		.byte	0
+ 462 0016 0B       		.uleb128 0xb
+ 463 0017 0B       		.uleb128 0xb
+ 464 0018 3E       		.uleb128 0x3e
+ 465 0019 0B       		.uleb128 0xb
+ 466 001a 03       		.uleb128 0x3
+ 467 001b 0E       		.uleb128 0xe
+ 468 001c 00       		.byte	0
+ 469 001d 00       		.byte	0
+ 470 001e 03       		.uleb128 0x3
+ 471 001f 24       		.uleb128 0x24
+ 472 0020 00       		.byte	0
+ 473 0021 0B       		.uleb128 0xb
+ 474 0022 0B       		.uleb128 0xb
+ 475 0023 3E       		.uleb128 0x3e
+ 476 0024 0B       		.uleb128 0xb
+ 477 0025 03       		.uleb128 0x3
+ 478 0026 08       		.uleb128 0x8
+ 479 0027 00       		.byte	0
+ 480 0028 00       		.byte	0
+ 481 0029 04       		.uleb128 0x4
+ 482 002a 16       		.uleb128 0x16
+ 483 002b 00       		.byte	0
+ 484 002c 03       		.uleb128 0x3
+ 485 002d 0E       		.uleb128 0xe
+ 486 002e 3A       		.uleb128 0x3a
+ 487 002f 0B       		.uleb128 0xb
+ 488 0030 3B       		.uleb128 0x3b
+ 489 0031 0B       		.uleb128 0xb
+ 490 0032 49       		.uleb128 0x49
+ 491 0033 13       		.uleb128 0x13
+ 492 0034 00       		.byte	0
+ 493 0035 00       		.byte	0
+ 494 0036 05       		.uleb128 0x5
+ 495 0037 16       		.uleb128 0x16
+ 496 0038 00       		.byte	0
+ 497 0039 03       		.uleb128 0x3
+ 498 003a 0E       		.uleb128 0xe
+ 499 003b 3A       		.uleb128 0x3a
+ 500 003c 0B       		.uleb128 0xb
+ 501 003d 3B       		.uleb128 0x3b
+ 502 003e 05       		.uleb128 0x5
+ 503 003f 49       		.uleb128 0x49
+ 504 0040 13       		.uleb128 0x13
+ 505 0041 00       		.byte	0
+ 506 0042 00       		.byte	0
+ 507 0043 06       		.uleb128 0x6
+ 508 0044 2E       		.uleb128 0x2e
+ 509 0045 01       		.byte	0x1
+ 510 0046 3F       		.uleb128 0x3f
+ 511 0047 19       		.uleb128 0x19
+ 512 0048 03       		.uleb128 0x3
+ 513 0049 0E       		.uleb128 0xe
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 12
+
+
+ 514 004a 3A       		.uleb128 0x3a
+ 515 004b 0B       		.uleb128 0xb
+ 516 004c 3B       		.uleb128 0x3b
+ 517 004d 0B       		.uleb128 0xb
+ 518 004e 27       		.uleb128 0x27
+ 519 004f 19       		.uleb128 0x19
+ 520 0050 49       		.uleb128 0x49
+ 521 0051 13       		.uleb128 0x13
+ 522 0052 11       		.uleb128 0x11
+ 523 0053 01       		.uleb128 0x1
+ 524 0054 12       		.uleb128 0x12
+ 525 0055 06       		.uleb128 0x6
+ 526 0056 40       		.uleb128 0x40
+ 527 0057 18       		.uleb128 0x18
+ 528 0058 9742     		.uleb128 0x2117
+ 529 005a 19       		.uleb128 0x19
+ 530 005b 01       		.uleb128 0x1
+ 531 005c 13       		.uleb128 0x13
+ 532 005d 00       		.byte	0
+ 533 005e 00       		.byte	0
+ 534 005f 07       		.uleb128 0x7
+ 535 0060 34       		.uleb128 0x34
+ 536 0061 00       		.byte	0
+ 537 0062 03       		.uleb128 0x3
+ 538 0063 08       		.uleb128 0x8
+ 539 0064 3A       		.uleb128 0x3a
+ 540 0065 0B       		.uleb128 0xb
+ 541 0066 3B       		.uleb128 0x3b
+ 542 0067 0B       		.uleb128 0xb
+ 543 0068 49       		.uleb128 0x49
+ 544 0069 13       		.uleb128 0x13
+ 545 006a 02       		.uleb128 0x2
+ 546 006b 17       		.uleb128 0x17
+ 547 006c 00       		.byte	0
+ 548 006d 00       		.byte	0
+ 549 006e 08       		.uleb128 0x8
+ 550 006f 34       		.uleb128 0x34
+ 551 0070 00       		.byte	0
+ 552 0071 03       		.uleb128 0x3
+ 553 0072 0E       		.uleb128 0xe
+ 554 0073 3A       		.uleb128 0x3a
+ 555 0074 0B       		.uleb128 0xb
+ 556 0075 3B       		.uleb128 0x3b
+ 557 0076 0B       		.uleb128 0xb
+ 558 0077 49       		.uleb128 0x49
+ 559 0078 13       		.uleb128 0x13
+ 560 0079 02       		.uleb128 0x2
+ 561 007a 18       		.uleb128 0x18
+ 562 007b 00       		.byte	0
+ 563 007c 00       		.byte	0
+ 564 007d 09       		.uleb128 0x9
+ 565 007e 34       		.uleb128 0x34
+ 566 007f 00       		.byte	0
+ 567 0080 03       		.uleb128 0x3
+ 568 0081 0E       		.uleb128 0xe
+ 569 0082 3A       		.uleb128 0x3a
+ 570 0083 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 13
+
+
+ 571 0084 3B       		.uleb128 0x3b
+ 572 0085 0B       		.uleb128 0xb
+ 573 0086 49       		.uleb128 0x49
+ 574 0087 13       		.uleb128 0x13
+ 575 0088 3F       		.uleb128 0x3f
+ 576 0089 19       		.uleb128 0x19
+ 577 008a 3C       		.uleb128 0x3c
+ 578 008b 19       		.uleb128 0x19
+ 579 008c 00       		.byte	0
+ 580 008d 00       		.byte	0
+ 581 008e 0A       		.uleb128 0xa
+ 582 008f 01       		.uleb128 0x1
+ 583 0090 01       		.byte	0x1
+ 584 0091 49       		.uleb128 0x49
+ 585 0092 13       		.uleb128 0x13
+ 586 0093 01       		.uleb128 0x1
+ 587 0094 13       		.uleb128 0x13
+ 588 0095 00       		.byte	0
+ 589 0096 00       		.byte	0
+ 590 0097 0B       		.uleb128 0xb
+ 591 0098 21       		.uleb128 0x21
+ 592 0099 00       		.byte	0
+ 593 009a 49       		.uleb128 0x49
+ 594 009b 13       		.uleb128 0x13
+ 595 009c 2F       		.uleb128 0x2f
+ 596 009d 0B       		.uleb128 0xb
+ 597 009e 00       		.byte	0
+ 598 009f 00       		.byte	0
+ 599 00a0 0C       		.uleb128 0xc
+ 600 00a1 26       		.uleb128 0x26
+ 601 00a2 00       		.byte	0
+ 602 00a3 49       		.uleb128 0x49
+ 603 00a4 13       		.uleb128 0x13
+ 604 00a5 00       		.byte	0
+ 605 00a6 00       		.byte	0
+ 606 00a7 0D       		.uleb128 0xd
+ 607 00a8 34       		.uleb128 0x34
+ 608 00a9 00       		.byte	0
+ 609 00aa 03       		.uleb128 0x3
+ 610 00ab 0E       		.uleb128 0xe
+ 611 00ac 3A       		.uleb128 0x3a
+ 612 00ad 0B       		.uleb128 0xb
+ 613 00ae 3B       		.uleb128 0x3b
+ 614 00af 05       		.uleb128 0x5
+ 615 00b0 49       		.uleb128 0x49
+ 616 00b1 13       		.uleb128 0x13
+ 617 00b2 3F       		.uleb128 0x3f
+ 618 00b3 19       		.uleb128 0x19
+ 619 00b4 3C       		.uleb128 0x3c
+ 620 00b5 19       		.uleb128 0x19
+ 621 00b6 00       		.byte	0
+ 622 00b7 00       		.byte	0
+ 623 00b8 00       		.byte	0
+ 624              		.section	.debug_loc,"",%progbits
+ 625              	.Ldebug_loc0:
+ 626              	.LLST0:
+ 627 0000 0C000000 		.4byte	.LVL0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 14
+
+
+ 628 0004 18000000 		.4byte	.LVL2
+ 629 0008 0100     		.2byte	0x1
+ 630 000a 53       		.byte	0x53
+ 631 000b 18000000 		.4byte	.LVL2
+ 632 000f 1A000000 		.4byte	.LVL3
+ 633 0013 0300     		.2byte	0x3
+ 634 0015 73       		.byte	0x73
+ 635 0016 78       		.sleb128 -8
+ 636 0017 9F       		.byte	0x9f
+ 637 0018 1A000000 		.4byte	.LVL3
+ 638 001c 4C000000 		.4byte	.LVL6
+ 639 0020 0100     		.2byte	0x1
+ 640 0022 53       		.byte	0x53
+ 641 0023 00000000 		.4byte	0
+ 642 0027 00000000 		.4byte	0
+ 643              	.LLST1:
+ 644 002b 26000000 		.4byte	.LVL4
+ 645 002f 42000000 		.4byte	.LVL5
+ 646 0033 0100     		.2byte	0x1
+ 647 0035 52       		.byte	0x52
+ 648 0036 42000000 		.4byte	.LVL5
+ 649 003a 62000000 		.4byte	.LVL7
+ 650 003e 0200     		.2byte	0x2
+ 651 0040 75       		.byte	0x75
+ 652 0041 00       		.sleb128 0
+ 653 0042 00000000 		.4byte	0
+ 654 0046 00000000 		.4byte	0
+ 655              		.section	.debug_aranges,"",%progbits
+ 656 0000 1C000000 		.4byte	0x1c
+ 657 0004 0200     		.2byte	0x2
+ 658 0006 00000000 		.4byte	.Ldebug_info0
+ 659 000a 04       		.byte	0x4
+ 660 000b 00       		.byte	0
+ 661 000c 0000     		.2byte	0
+ 662 000e 0000     		.2byte	0
+ 663 0010 00000000 		.4byte	.LFB59
+ 664 0014 88000000 		.4byte	.LFE59-.LFB59
+ 665 0018 00000000 		.4byte	0
+ 666 001c 00000000 		.4byte	0
+ 667              		.section	.debug_ranges,"",%progbits
+ 668              	.Ldebug_ranges0:
+ 669 0000 00000000 		.4byte	.LFB59
+ 670 0004 88000000 		.4byte	.LFE59
+ 671 0008 00000000 		.4byte	0
+ 672 000c 00000000 		.4byte	0
+ 673              		.section	.debug_line,"",%progbits
+ 674              	.Ldebug_line0:
+ 675 0000 57010000 		.section	.debug_str,"MS",%progbits,1
+ 675      02003101 
+ 675      00000201 
+ 675      FB0E0D00 
+ 675      01010101 
+ 676              	.LASF44:
+ 677 0000 47656E65 		.ascii	"Generated_Source\\PSoC5\\ErikaOS_1_ee_rq_exchg.c\000"
+ 677      72617465 
+ 677      645F536F 
+ 677      75726365 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 15
+
+
+ 677      5C50536F 
+ 678              	.LASF14:
+ 679 002f 45455F55 		.ascii	"EE_UREG\000"
+ 679      52454700 
+ 680              	.LASF36:
+ 681 0037 45455F72 		.ascii	"EE_rq_free\000"
+ 681      715F6672 
+ 681      656500
+ 682              	.LASF37:
+ 683 0042 45455F74 		.ascii	"EE_th_event_active\000"
+ 683      685F6576 
+ 683      656E745F 
+ 683      61637469 
+ 683      766500
+ 684              	.LASF20:
+ 685 0055 74656D70 		.ascii	"temp\000"
+ 685      00
+ 686              	.LASF2:
+ 687 005a 73686F72 		.ascii	"short int\000"
+ 687      7420696E 
+ 687      7400
+ 688              	.LASF23:
+ 689 0064 73697A65 		.ascii	"sizetype\000"
+ 689      74797065 
+ 689      00
+ 690              	.LASF16:
+ 691 006d 45455F46 		.ascii	"EE_FREG\000"
+ 691      52454700 
+ 692              	.LASF13:
+ 693 0075 45455F55 		.ascii	"EE_UINT32\000"
+ 693      494E5433 
+ 693      3200
+ 694              	.LASF24:
+ 695 007f 45455F74 		.ascii	"EE_th_ready_prio\000"
+ 695      685F7265 
+ 695      6164795F 
+ 695      7072696F 
+ 695      00
+ 696              	.LASF31:
+ 697 0090 45455F72 		.ascii	"EE_rq_queues_head\000"
+ 697      715F7175 
+ 697      65756573 
+ 697      5F686561 
+ 697      6400
+ 698              	.LASF18:
+ 699 00a2 45455F54 		.ascii	"EE_TID\000"
+ 699      494400
+ 700              	.LASF38:
+ 701 00a9 45455F74 		.ascii	"EE_th_waswaiting\000"
+ 701      685F7761 
+ 701      73776169 
+ 701      74696E67 
+ 701      00
+ 702              	.LASF21:
+ 703 00ba 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 703      52515F6E 
+ 703      65737469 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 16
+
+
+ 703      6E675F6C 
+ 703      6576656C 
+ 704              	.LASF6:
+ 705 00cf 6C6F6E67 		.ascii	"long long int\000"
+ 705      206C6F6E 
+ 705      6720696E 
+ 705      7400
+ 706              	.LASF10:
+ 707 00dd 45455F49 		.ascii	"EE_INT8\000"
+ 707      4E543800 
+ 708              	.LASF19:
+ 709 00e5 45455F54 		.ascii	"EE_TYPE_RQ_MASK\000"
+ 709      5950455F 
+ 709      52515F4D 
+ 709      41534B00 
+ 710              	.LASF4:
+ 711 00f5 6C6F6E67 		.ascii	"long int\000"
+ 711      20696E74 
+ 711      00
+ 712              	.LASF40:
+ 713 00fe 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 713      6F5F4952 
+ 713      515F7375 
+ 713      7370656E 
+ 713      645F7374 
+ 714              	.LASF33:
+ 715 0117 45455F72 		.ascii	"EE_rq_pairs_next\000"
+ 715      715F7061 
+ 715      6972735F 
+ 715      6E657874 
+ 715      00
+ 716              	.LASF30:
+ 717 0128 45455F73 		.ascii	"EE_sys_ceiling\000"
+ 717      79735F63 
+ 717      65696C69 
+ 717      6E6700
+ 718              	.LASF46:
+ 719 0137 45455F72 		.ascii	"EE_rq2stk_exchange\000"
+ 719      71327374 
+ 719      6B5F6578 
+ 719      6368616E 
+ 719      676500
+ 720              	.LASF9:
+ 721 014a 6C6F6E67 		.ascii	"long double\000"
+ 721      20646F75 
+ 721      626C6500 
+ 722              	.LASF1:
+ 723 0156 756E7369 		.ascii	"unsigned char\000"
+ 723      676E6564 
+ 723      20636861 
+ 723      7200
+ 724              	.LASF15:
+ 725 0164 45455F53 		.ascii	"EE_SREG\000"
+ 725      52454700 
+ 726              	.LASF0:
+ 727 016c 7369676E 		.ascii	"signed char\000"
+ 727      65642063 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 17
+
+
+ 727      68617200 
+ 728              	.LASF7:
+ 729 0178 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 729      206C6F6E 
+ 729      6720756E 
+ 729      7369676E 
+ 729      65642069 
+ 730              	.LASF8:
+ 731 018f 756E7369 		.ascii	"unsigned int\000"
+ 731      676E6564 
+ 731      20696E74 
+ 731      00
+ 732              	.LASF28:
+ 733 019c 45455F74 		.ascii	"EE_th_rnact\000"
+ 733      685F726E 
+ 733      61637400 
+ 734              	.LASF22:
+ 735 01a8 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 735      74645F65 
+ 735      6E646379 
+ 735      636C655F 
+ 735      6E657874 
+ 736              	.LASF12:
+ 737 01c1 45455F49 		.ascii	"EE_INT32\000"
+ 737      4E543332 
+ 737      00
+ 738              	.LASF3:
+ 739 01ca 73686F72 		.ascii	"short unsigned int\000"
+ 739      7420756E 
+ 739      7369676E 
+ 739      65642069 
+ 739      6E7400
+ 740              	.LASF11:
+ 741 01dd 45455F55 		.ascii	"EE_UINT16\000"
+ 741      494E5431 
+ 741      3600
+ 742              	.LASF41:
+ 743 01e7 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 743      70706C69 
+ 743      63617469 
+ 743      6F6E4D6F 
+ 743      646500
+ 744              	.LASF5:
+ 745 01fa 6C6F6E67 		.ascii	"long unsigned int\000"
+ 745      20756E73 
+ 745      69676E65 
+ 745      6420696E 
+ 745      7400
+ 746              	.LASF17:
+ 747 020c 45455F54 		.ascii	"EE_TYPEBOOL\000"
+ 747      59504542 
+ 747      4F4F4C00 
+ 748              	.LASF29:
+ 749 0218 45455F73 		.ascii	"EE_stkfirst\000"
+ 749      746B6669 
+ 749      72737400 
+ 750              	.LASF34:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 18
+
+
+ 751 0224 45455F72 		.ascii	"EE_rq_pairs_tid\000"
+ 751      715F7061 
+ 751      6972735F 
+ 751      74696400 
+ 752              	.LASF35:
+ 753 0234 45455F72 		.ascii	"EE_rq_bitmask\000"
+ 753      715F6269 
+ 753      746D6173 
+ 753      6B00
+ 754              	.LASF42:
+ 755 0242 45455F72 		.ascii	"EE_rq_lookup\000"
+ 755      715F6C6F 
+ 755      6F6B7570 
+ 755      00
+ 756              	.LASF26:
+ 757 024f 45455F74 		.ascii	"EE_th_status\000"
+ 757      685F7374 
+ 757      61747573 
+ 757      00
+ 758              	.LASF25:
+ 759 025c 45455F74 		.ascii	"EE_th_dispatch_prio\000"
+ 759      685F6469 
+ 759      73706174 
+ 759      63685F70 
+ 759      72696F00 
+ 760              	.LASF27:
+ 761 0270 45455F74 		.ascii	"EE_th_next\000"
+ 761      685F6E65 
+ 761      787400
+ 762              	.LASF32:
+ 763 027b 45455F72 		.ascii	"EE_rq_queues_tail\000"
+ 763      715F7175 
+ 763      65756573 
+ 763      5F746169 
+ 763      6C00
+ 764              	.LASF43:
+ 765 028d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 765      43313120 
+ 765      352E342E 
+ 765      31203230 
+ 765      31363036 
+ 766 02c0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 766      20726576 
+ 766      6973696F 
+ 766      6E203233 
+ 766      37373135 
+ 767 02f3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 767      66756E63 
+ 767      74696F6E 
+ 767      2D736563 
+ 767      74696F6E 
+ 768              	.LASF39:
+ 769 031b 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 769      6F5F4952 
+ 769      515F6469 
+ 769      7361626C 
+ 769      655F636F 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc40Mz4i.s 			page 19
+
+
+ 770              	.LASF45:
+ 771 0333 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\EOS_Assignment_Two\\JS"
+ 771      73657273 
+ 771      5C7A616B 
+ 771      69735C44 
+ 771      6F63756D 
+ 772 0361 4F4E5F50 		.ascii	"ON_Parser\\EOS_Assignment_Two\\JSON_Parser.cydsn\000"
+ 772      61727365 
+ 772      725C454F 
+ 772      535F4173 
+ 772      7369676E 
+ 773              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

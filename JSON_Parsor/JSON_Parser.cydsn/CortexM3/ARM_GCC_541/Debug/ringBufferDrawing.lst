@@ -1,0 +1,2105 @@
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ringBufferDrawing.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.RB_Draw_t_clear,"ax",%progbits
+  20              		.align	2
+  21              		.global	RB_Draw_t_clear
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	RB_Draw_t_clear, %function
+  25              	RB_Draw_t_clear:
+  26              	.LFB2:
+  27              		.file 1 "source\\bsw\\cdd\\ringBufferDrawing.c"
+   1:source\bsw\cdd/ringBufferDrawing.c **** /**
+   2:source\bsw\cdd/ringBufferDrawing.c **** * \file <filename>
+   3:source\bsw\cdd/ringBufferDrawing.c **** * \author <author-name>
+   4:source\bsw\cdd/ringBufferDrawing.c **** * \date <date>
+   5:source\bsw\cdd/ringBufferDrawing.c **** *
+   6:source\bsw\cdd/ringBufferDrawing.c **** * \brief <Symbolic File name>
+   7:source\bsw\cdd/ringBufferDrawing.c **** *
+   8:source\bsw\cdd/ringBufferDrawing.c **** * \copyright Copyright ©2016
+   9:source\bsw\cdd/ringBufferDrawing.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\bsw\cdd/ringBufferDrawing.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\bsw\cdd/ringBufferDrawing.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\bsw\cdd/ringBufferDrawing.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\bsw\cdd/ringBufferDrawing.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\bsw\cdd/ringBufferDrawing.c **** *
+  15:source\bsw\cdd/ringBufferDrawing.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\bsw\cdd/ringBufferDrawing.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\bsw\cdd/ringBufferDrawing.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\bsw\cdd/ringBufferDrawing.c **** */
+  19:source\bsw\cdd/ringBufferDrawing.c **** 
+  20:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  21:source\bsw\cdd/ringBufferDrawing.c **** /* Include files                                                             */
+  22:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  23:source\bsw\cdd/ringBufferDrawing.c **** #include <stdlib.h>
+  24:source\bsw\cdd/ringBufferDrawing.c **** #include "ringBufferDrawing.h"
+  25:source\bsw\cdd/ringBufferDrawing.c **** 
+  26:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  27:source\bsw\cdd/ringBufferDrawing.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  28:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  29:source\bsw\cdd/ringBufferDrawing.c **** 
+  30:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 2
+
+
+  31:source\bsw\cdd/ringBufferDrawing.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  32:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  33:source\bsw\cdd/ringBufferDrawing.c **** 
+  34:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  35:source\bsw\cdd/ringBufferDrawing.c **** /* Local type definitions ('typedef')                                        */
+  36:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  37:source\bsw\cdd/ringBufferDrawing.c **** 
+  38:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  39:source\bsw\cdd/ringBufferDrawing.c **** /* Local variable definitions ('static')                                     */
+  40:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  41:source\bsw\cdd/ringBufferDrawing.c **** 
+  42:source\bsw\cdd/ringBufferDrawing.c **** 
+  43:source\bsw\cdd/ringBufferDrawing.c **** 
+  44:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  45:source\bsw\cdd/ringBufferDrawing.c **** /* Local function prototypes ('static')                                      */
+  46:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  47:source\bsw\cdd/ringBufferDrawing.c **** 
+  48:source\bsw\cdd/ringBufferDrawing.c **** 
+  49:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  50:source\bsw\cdd/ringBufferDrawing.c **** /* Function implementation - global ('extern') and local ('static')          */
+  51:source\bsw\cdd/ringBufferDrawing.c **** /*****************************************************************************/
+  52:source\bsw\cdd/ringBufferDrawing.c **** 
+  53:source\bsw\cdd/ringBufferDrawing.c **** /**
+  54:source\bsw\cdd/ringBufferDrawing.c ****  * Initialisation of a ringbuffer
+  55:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+  56:source\bsw\cdd/ringBufferDrawing.c ****  * @return RC_SUCCESS or error code
+  57:source\bsw\cdd/ringBufferDrawing.c ****  */
+  58:source\bsw\cdd/ringBufferDrawing.c **** RC_t RB_Draw_t_init(RB_Draw_t * const me)
+  59:source\bsw\cdd/ringBufferDrawing.c **** {
+  60:source\bsw\cdd/ringBufferDrawing.c ****     return RB_Draw_t_clear(me);
+  61:source\bsw\cdd/ringBufferDrawing.c **** }
+  62:source\bsw\cdd/ringBufferDrawing.c **** 
+  63:source\bsw\cdd/ringBufferDrawing.c **** /**
+  64:source\bsw\cdd/ringBufferDrawing.c ****  * Clearing of a ringbuffer
+  65:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+  66:source\bsw\cdd/ringBufferDrawing.c ****  * @return RC_SUCCESS or error code
+  67:source\bsw\cdd/ringBufferDrawing.c ****  */
+  68:source\bsw\cdd/ringBufferDrawing.c **** RC_t RB_Draw_t_clear(RB_Draw_t * const me)
+  69:source\bsw\cdd/ringBufferDrawing.c **** {
+  28              		.loc 1 69 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  70:source\bsw\cdd/ringBufferDrawing.c ****     if (0 == me) return RC_ERROR_BAD_PARAM;
+  34              		.loc 1 70 0
+  35 0000 F0B1     		cbz	r0, .L5
+  69:source\bsw\cdd/ringBufferDrawing.c ****     if (0 == me) return RC_ERROR_BAD_PARAM;
+  36              		.loc 1 69 0
+  37 0002 10B4     		push	{r4}
+  38              		.cfi_def_cfa_offset 4
+  39              		.cfi_offset 4, -4
+  40 0004 0446     		mov	r4, r0
+  71:source\bsw\cdd/ringBufferDrawing.c ****     
+  72:source\bsw\cdd/ringBufferDrawing.c ****     me->m_fillLevel = 0;
+  41              		.loc 1 72 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 3
+
+
+  42 0006 0023     		movs	r3, #0
+  43 0008 A0F8D43C 		strh	r3, [r0, #3284]	@ movhi
+  73:source\bsw\cdd/ringBufferDrawing.c ****     me->m_readIndex = 0;
+  44              		.loc 1 73 0
+  45 000c A0F8D03C 		strh	r3, [r0, #3280]	@ movhi
+  74:source\bsw\cdd/ringBufferDrawing.c ****     me->m_writeIndex = 0;
+  46              		.loc 1 74 0
+  47 0010 A0F8D23C 		strh	r3, [r0, #3282]	@ movhi
+  48              	.LVL1:
+  49              	.LBB2:
+  75:source\bsw\cdd/ringBufferDrawing.c ****     
+  76:source\bsw\cdd/ringBufferDrawing.c ****     for (uint16_t i = 0; i < RB_DRAWING_SIZE; i++)
+  50              		.loc 1 76 0
+  51 0014 10E0     		b	.L3
+  52              	.LVL2:
+  53              	.L4:
+  77:source\bsw\cdd/ringBufferDrawing.c ****     {
+  78:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].color = WHITE;
+  54              		.loc 1 78 0 discriminator 3
+  55 0016 A420     		movs	r0, #164
+  56 0018 00FB03F0 		mul	r0, r0, r3
+  57 001c 2218     		adds	r2, r4, r0
+  58 001e 4FF6FF71 		movw	r1, #65535
+  59 0022 A2F8A010 		strh	r1, [r2, #160]	@ movhi
+  79:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].numLines = 0;
+  60              		.loc 1 79 0 discriminator 3
+  61 0026 0021     		movs	r1, #0
+  62 0028 82F8A210 		strb	r1, [r2, #162]
+  80:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].lines->coordinates[0] = 0;
+  63              		.loc 1 80 0 discriminator 3
+  64 002c 2152     		strh	r1, [r4, r0]	@ movhi
+  81:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].lines->coordinates[1] = 0;
+  65              		.loc 1 81 0 discriminator 3
+  66 002e 5180     		strh	r1, [r2, #2]	@ movhi
+  82:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].lines->coordinates[2] = 0;
+  67              		.loc 1 82 0 discriminator 3
+  68 0030 9180     		strh	r1, [r2, #4]	@ movhi
+  83:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[i].lines->coordinates[3] = 0;
+  69              		.loc 1 83 0 discriminator 3
+  70 0032 D180     		strh	r1, [r2, #6]	@ movhi
+  76:source\bsw\cdd/ringBufferDrawing.c ****     {
+  71              		.loc 1 76 0 discriminator 3
+  72 0034 0133     		adds	r3, r3, #1
+  73              	.LVL3:
+  74 0036 9BB2     		uxth	r3, r3
+  75              	.LVL4:
+  76              	.L3:
+  76:source\bsw\cdd/ringBufferDrawing.c ****     {
+  77              		.loc 1 76 0 is_stmt 0 discriminator 1
+  78 0038 132B     		cmp	r3, #19
+  79 003a ECD9     		bls	.L4
+  80              	.LBE2:
+  84:source\bsw\cdd/ringBufferDrawing.c **** 
+  85:source\bsw\cdd/ringBufferDrawing.c ****     }
+  86:source\bsw\cdd/ringBufferDrawing.c ****     
+  87:source\bsw\cdd/ringBufferDrawing.c ****     return RC_SUCCESS;
+  81              		.loc 1 87 0 is_stmt 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 4
+
+
+  82 003c 0020     		movs	r0, #0
+  83              	.LBB3:
+  84 003e 02E0     		b	.L2
+  85              	.LVL5:
+  86              	.L5:
+  87              		.cfi_def_cfa_offset 0
+  88              		.cfi_restore 4
+  89              	.LBE3:
+  70:source\bsw\cdd/ringBufferDrawing.c ****     
+  90              		.loc 1 70 0
+  91 0040 6FF01300 		mvn	r0, #19
+  92              	.LVL6:
+  93 0044 7047     		bx	lr
+  94              	.LVL7:
+  95              	.L2:
+  96              		.cfi_def_cfa_offset 4
+  97              		.cfi_offset 4, -4
+  88:source\bsw\cdd/ringBufferDrawing.c **** }
+  98              		.loc 1 88 0
+  99 0046 10BC     		pop	{r4}
+ 100              		.cfi_restore 4
+ 101              		.cfi_def_cfa_offset 0
+ 102              	.LVL8:
+ 103 0048 7047     		bx	lr
+ 104              		.cfi_endproc
+ 105              	.LFE2:
+ 106              		.size	RB_Draw_t_clear, .-RB_Draw_t_clear
+ 107 004a 00BF     		.section	.text.RB_Draw_t_init,"ax",%progbits
+ 108              		.align	2
+ 109              		.global	RB_Draw_t_init
+ 110              		.thumb
+ 111              		.thumb_func
+ 112              		.type	RB_Draw_t_init, %function
+ 113              	RB_Draw_t_init:
+ 114              	.LFB1:
+  59:source\bsw\cdd/ringBufferDrawing.c ****     return RB_Draw_t_clear(me);
+ 115              		.loc 1 59 0
+ 116              		.cfi_startproc
+ 117              		@ args = 0, pretend = 0, frame = 0
+ 118              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119              	.LVL9:
+ 120 0000 08B5     		push	{r3, lr}
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 3, -8
+ 123              		.cfi_offset 14, -4
+  60:source\bsw\cdd/ringBufferDrawing.c **** }
+ 124              		.loc 1 60 0
+ 125 0002 FFF7FEFF 		bl	RB_Draw_t_clear
+ 126              	.LVL10:
+  61:source\bsw\cdd/ringBufferDrawing.c **** 
+ 127              		.loc 1 61 0
+ 128 0006 08BD     		pop	{r3, pc}
+ 129              		.cfi_endproc
+ 130              	.LFE1:
+ 131              		.size	RB_Draw_t_init, .-RB_Draw_t_init
+ 132              		.section	.text.RB_Draw_t_write,"ax",%progbits
+ 133              		.align	2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 5
+
+
+ 134              		.global	RB_Draw_t_write
+ 135              		.thumb
+ 136              		.thumb_func
+ 137              		.type	RB_Draw_t_write, %function
+ 138              	RB_Draw_t_write:
+ 139              	.LFB3:
+  89:source\bsw\cdd/ringBufferDrawing.c ****     
+  90:source\bsw\cdd/ringBufferDrawing.c **** 
+  91:source\bsw\cdd/ringBufferDrawing.c **** /**
+  92:source\bsw\cdd/ringBufferDrawing.c ****  * Write one element to the ringbuffer
+  93:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+  94:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_data_t const * const data : IN - Data to be written
+  95:source\bsw\cdd/ringBufferDrawing.c ****  * @return RC_SUCCESS or error code
+  96:source\bsw\cdd/ringBufferDrawing.c ****  */
+  97:source\bsw\cdd/ringBufferDrawing.c **** RC_t RB_Draw_t_write(RB_Draw_t * const me, RB_Draw_data_t const * const data)
+  98:source\bsw\cdd/ringBufferDrawing.c **** {
+ 140              		.loc 1 98 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              	.LVL11:
+ 145 0000 70B5     		push	{r4, r5, r6, lr}
+ 146              		.cfi_def_cfa_offset 16
+ 147              		.cfi_offset 4, -16
+ 148              		.cfi_offset 5, -12
+ 149              		.cfi_offset 6, -8
+ 150              		.cfi_offset 14, -4
+  99:source\bsw\cdd/ringBufferDrawing.c ****     if (me->m_fillLevel < RB_DRAWING_SIZE)
+ 151              		.loc 1 99 0
+ 152 0002 B0F8D46C 		ldrh	r6, [r0, #3284]
+ 153 0006 132E     		cmp	r6, #19
+ 154 0008 1BD8     		bhi	.L12
+ 155 000a 0446     		mov	r4, r0
+ 100:source\bsw\cdd/ringBufferDrawing.c ****     {
+ 101:source\bsw\cdd/ringBufferDrawing.c ****         me->m_data[me->m_writeIndex++] = *data;
+ 156              		.loc 1 101 0
+ 157 000c B0F8D23C 		ldrh	r3, [r0, #3282]
+ 158 0010 5D1C     		adds	r5, r3, #1
+ 159 0012 ADB2     		uxth	r5, r5
+ 160 0014 A0F8D25C 		strh	r5, [r0, #3282]	@ movhi
+ 161 0018 A420     		movs	r0, #164
+ 162              	.LVL12:
+ 163 001a 0246     		mov	r2, r0
+ 164 001c 00FB0340 		mla	r0, r0, r3, r4
+ 165 0020 FFF7FEFF 		bl	memcpy
+ 166              	.LVL13:
+ 102:source\bsw\cdd/ringBufferDrawing.c ****         
+ 103:source\bsw\cdd/ringBufferDrawing.c ****         me->m_writeIndex %= RB_DRAWING_SIZE;
+ 167              		.loc 1 103 0
+ 168 0024 084B     		ldr	r3, .L14
+ 169 0026 A3FB0523 		umull	r2, r3, r3, r5
+ 170 002a 1B09     		lsrs	r3, r3, #4
+ 171 002c 03EB8303 		add	r3, r3, r3, lsl #2
+ 172 0030 9A00     		lsls	r2, r3, #2
+ 173 0032 AD1A     		subs	r5, r5, r2
+ 174 0034 A4F8D25C 		strh	r5, [r4, #3282]	@ movhi
+ 104:source\bsw\cdd/ringBufferDrawing.c ****         me->m_fillLevel++;
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 6
+
+
+ 175              		.loc 1 104 0
+ 176 0038 0136     		adds	r6, r6, #1
+ 177 003a A4F8D46C 		strh	r6, [r4, #3284]	@ movhi
+ 105:source\bsw\cdd/ringBufferDrawing.c ****         
+ 106:source\bsw\cdd/ringBufferDrawing.c ****         return RC_SUCCESS;
+ 178              		.loc 1 106 0
+ 179 003e 0020     		movs	r0, #0
+ 180 0040 70BD     		pop	{r4, r5, r6, pc}
+ 181              	.LVL14:
+ 182              	.L12:
+ 107:source\bsw\cdd/ringBufferDrawing.c ****     }
+ 108:source\bsw\cdd/ringBufferDrawing.c ****     else
+ 109:source\bsw\cdd/ringBufferDrawing.c ****     {
+ 110:source\bsw\cdd/ringBufferDrawing.c ****         return RC_ERROR_BUFFER_FULL;
+ 183              		.loc 1 110 0
+ 184 0042 6FF00700 		mvn	r0, #7
+ 185              	.LVL15:
+ 111:source\bsw\cdd/ringBufferDrawing.c ****     }
+ 112:source\bsw\cdd/ringBufferDrawing.c **** }
+ 186              		.loc 1 112 0
+ 187 0046 70BD     		pop	{r4, r5, r6, pc}
+ 188              	.L15:
+ 189              		.align	2
+ 190              	.L14:
+ 191 0048 CDCCCCCC 		.word	-858993459
+ 192              		.cfi_endproc
+ 193              	.LFE3:
+ 194              		.size	RB_Draw_t_write, .-RB_Draw_t_write
+ 195              		.section	.text.RB_Draw_t_read,"ax",%progbits
+ 196              		.align	2
+ 197              		.global	RB_Draw_t_read
+ 198              		.thumb
+ 199              		.thumb_func
+ 200              		.type	RB_Draw_t_read, %function
+ 201              	RB_Draw_t_read:
+ 202              	.LFB4:
+ 113:source\bsw\cdd/ringBufferDrawing.c **** 
+ 114:source\bsw\cdd/ringBufferDrawing.c **** /**
+ 115:source\bsw\cdd/ringBufferDrawing.c ****  * Read one element from the ringbuffer
+ 116:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+ 117:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_data_t * const data : OUT - Data read
+ 118:source\bsw\cdd/ringBufferDrawing.c ****  * @return RC_SUCCESS or error code
+ 119:source\bsw\cdd/ringBufferDrawing.c ****  */
+ 120:source\bsw\cdd/ringBufferDrawing.c **** RC_t RB_Draw_t_read(RB_Draw_t * const me, RB_Draw_data_t * const data)
+ 121:source\bsw\cdd/ringBufferDrawing.c **** {
+ 203              		.loc 1 121 0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207              	.LVL16:
+ 122:source\bsw\cdd/ringBufferDrawing.c ****     if (me->m_fillLevel > 0)
+ 208              		.loc 1 122 0
+ 209 0000 B0F8D43C 		ldrh	r3, [r0, #3284]
+ 210 0004 0BB3     		cbz	r3, .L18
+ 121:source\bsw\cdd/ringBufferDrawing.c ****     if (me->m_fillLevel > 0)
+ 211              		.loc 1 121 0
+ 212 0006 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 7
+
+
+ 213              		.cfi_def_cfa_offset 8
+ 214              		.cfi_offset 4, -8
+ 215              		.cfi_offset 14, -4
+ 216 0008 0B46     		mov	r3, r1
+ 217 000a 0446     		mov	r4, r0
+ 123:source\bsw\cdd/ringBufferDrawing.c ****     {
+ 124:source\bsw\cdd/ringBufferDrawing.c ****         *data = me->m_data[me->m_readIndex++];
+ 218              		.loc 1 124 0
+ 219 000c B0F8D01C 		ldrh	r1, [r0, #3280]
+ 220              	.LVL17:
+ 221 0010 4A1C     		adds	r2, r1, #1
+ 222 0012 A0F8D02C 		strh	r2, [r0, #3280]	@ movhi
+ 223 0016 A420     		movs	r0, #164
+ 224              	.LVL18:
+ 225 0018 0246     		mov	r2, r0
+ 226 001a 00FB0141 		mla	r1, r0, r1, r4
+ 227 001e 1846     		mov	r0, r3
+ 228 0020 FFF7FEFF 		bl	memcpy
+ 229              	.LVL19:
+ 125:source\bsw\cdd/ringBufferDrawing.c ****         
+ 126:source\bsw\cdd/ringBufferDrawing.c ****         me->m_readIndex %= RB_DRAWING_SIZE;
+ 230              		.loc 1 126 0
+ 231 0024 B4F8D02C 		ldrh	r2, [r4, #3280]
+ 232 0028 094B     		ldr	r3, .L21
+ 233 002a A3FB0213 		umull	r1, r3, r3, r2
+ 234 002e 1B09     		lsrs	r3, r3, #4
+ 235 0030 03EB8303 		add	r3, r3, r3, lsl #2
+ 236 0034 9900     		lsls	r1, r3, #2
+ 237 0036 521A     		subs	r2, r2, r1
+ 238 0038 A4F8D02C 		strh	r2, [r4, #3280]	@ movhi
+ 127:source\bsw\cdd/ringBufferDrawing.c ****         me->m_fillLevel--;
+ 239              		.loc 1 127 0
+ 240 003c B4F8D43C 		ldrh	r3, [r4, #3284]
+ 241 0040 013B     		subs	r3, r3, #1
+ 242 0042 A4F8D43C 		strh	r3, [r4, #3284]	@ movhi
+ 128:source\bsw\cdd/ringBufferDrawing.c ****         
+ 129:source\bsw\cdd/ringBufferDrawing.c ****         return RC_SUCCESS;
+ 243              		.loc 1 129 0
+ 244 0046 0020     		movs	r0, #0
+ 245 0048 10BD     		pop	{r4, pc}
+ 246              	.LVL20:
+ 247              	.L18:
+ 248              		.cfi_def_cfa_offset 0
+ 249              		.cfi_restore 4
+ 250              		.cfi_restore 14
+ 130:source\bsw\cdd/ringBufferDrawing.c ****     }
+ 131:source\bsw\cdd/ringBufferDrawing.c ****     else
+ 132:source\bsw\cdd/ringBufferDrawing.c ****     {
+ 133:source\bsw\cdd/ringBufferDrawing.c ****         return RC_ERROR_BUFFER_EMTPY;
+ 251              		.loc 1 133 0
+ 252 004a 6FF00800 		mvn	r0, #8
+ 253              	.LVL21:
+ 254 004e 7047     		bx	lr
+ 255              	.L22:
+ 256              		.align	2
+ 257              	.L21:
+ 258 0050 CDCCCCCC 		.word	-858993459
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 8
+
+
+ 259              		.cfi_endproc
+ 260              	.LFE4:
+ 261              		.size	RB_Draw_t_read, .-RB_Draw_t_read
+ 262              		.section	.text.RB_Draw_t_getCapacity,"ax",%progbits
+ 263              		.align	2
+ 264              		.global	RB_Draw_t_getCapacity
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.type	RB_Draw_t_getCapacity, %function
+ 268              	RB_Draw_t_getCapacity:
+ 269              	.LFB5:
+ 134:source\bsw\cdd/ringBufferDrawing.c ****     }
+ 135:source\bsw\cdd/ringBufferDrawing.c **** }
+ 136:source\bsw\cdd/ringBufferDrawing.c **** 
+ 137:source\bsw\cdd/ringBufferDrawing.c **** /**
+ 138:source\bsw\cdd/ringBufferDrawing.c ****  * Provide available space in buffer
+ 139:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+ 140:source\bsw\cdd/ringBufferDrawing.c ****  * @return Available number of elements to be stored
+ 141:source\bsw\cdd/ringBufferDrawing.c ****  */
+ 142:source\bsw\cdd/ringBufferDrawing.c **** uint16_t RB_Draw_t_getCapacity(RB_Draw_t * const me)
+ 143:source\bsw\cdd/ringBufferDrawing.c **** {
+ 270              		.loc 1 143 0
+ 271              		.cfi_startproc
+ 272              		@ args = 0, pretend = 0, frame = 0
+ 273              		@ frame_needed = 0, uses_anonymous_args = 0
+ 274              		@ link register save eliminated.
+ 275              	.LVL22:
+ 144:source\bsw\cdd/ringBufferDrawing.c ****     //Todo: No  error handling considered, assume all other functions work as intended
+ 145:source\bsw\cdd/ringBufferDrawing.c ****     return RB_DRAWING_SIZE - me->m_fillLevel;
+ 276              		.loc 1 145 0
+ 277 0000 B0F8D40C 		ldrh	r0, [r0, #3284]
+ 278              	.LVL23:
+ 279 0004 C0F11400 		rsb	r0, r0, #20
+ 146:source\bsw\cdd/ringBufferDrawing.c **** }
+ 280              		.loc 1 146 0
+ 281 0008 80B2     		uxth	r0, r0
+ 282 000a 7047     		bx	lr
+ 283              		.cfi_endproc
+ 284              	.LFE5:
+ 285              		.size	RB_Draw_t_getCapacity, .-RB_Draw_t_getCapacity
+ 286              		.section	.text.RB_Draw_t_getNumberOfStoredElements,"ax",%progbits
+ 287              		.align	2
+ 288              		.global	RB_Draw_t_getNumberOfStoredElements
+ 289              		.thumb
+ 290              		.thumb_func
+ 291              		.type	RB_Draw_t_getNumberOfStoredElements, %function
+ 292              	RB_Draw_t_getNumberOfStoredElements:
+ 293              	.LFB6:
+ 147:source\bsw\cdd/ringBufferDrawing.c **** 
+ 148:source\bsw\cdd/ringBufferDrawing.c **** /**
+ 149:source\bsw\cdd/ringBufferDrawing.c ****  * Check how much data is stored
+ 150:source\bsw\cdd/ringBufferDrawing.c ****  * @param RB_Draw_t * const me : IN/OUT - pointer to ringbuffer object 
+ 151:source\bsw\cdd/ringBufferDrawing.c ****  * @return number of byte stored
+ 152:source\bsw\cdd/ringBufferDrawing.c ****  */
+ 153:source\bsw\cdd/ringBufferDrawing.c **** uint16_t RB_Draw_t_getNumberOfStoredElements(RB_Draw_t * const me)
+ 154:source\bsw\cdd/ringBufferDrawing.c **** {
+ 294              		.loc 1 154 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 9
+
+
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299              	.LVL24:
+ 155:source\bsw\cdd/ringBufferDrawing.c ****     return me->m_fillLevel;
+ 156:source\bsw\cdd/ringBufferDrawing.c **** }
+ 300              		.loc 1 156 0
+ 301 0000 B0F8D40C 		ldrh	r0, [r0, #3284]
+ 302              	.LVL25:
+ 303 0004 7047     		bx	lr
+ 304              		.cfi_endproc
+ 305              	.LFE6:
+ 306              		.size	RB_Draw_t_getNumberOfStoredElements, .-RB_Draw_t_getNumberOfStoredElements
+ 307 0006 00BF     		.text
+ 308              	.Letext0:
+ 309              		.file 2 ".\\source\\bsw/global.h"
+ 310              		.file 3 ".\\source\\bsw\\cdd\\tft/tft.h"
+ 311              		.file 4 "source\\bsw\\cdd\\ringBufferDrawing.h"
+ 312              		.section	.debug_info,"",%progbits
+ 313              	.Ldebug_info0:
+ 314 0000 76040000 		.4byte	0x476
+ 315 0004 0400     		.2byte	0x4
+ 316 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 317 000a 04       		.byte	0x4
+ 318 000b 01       		.uleb128 0x1
+ 319 000c 68030000 		.4byte	.LASF86
+ 320 0010 0C       		.byte	0xc
+ 321 0011 EE040000 		.4byte	.LASF87
+ 322 0015 CB020000 		.4byte	.LASF88
+ 323 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 324 001d 00000000 		.4byte	0
+ 325 0021 00000000 		.4byte	.Ldebug_line0
+ 326 0025 02       		.uleb128 0x2
+ 327 0026 04       		.byte	0x4
+ 328 0027 07       		.byte	0x7
+ 329 0028 77020000 		.4byte	.LASF0
+ 330 002c 03       		.uleb128 0x3
+ 331 002d 04       		.byte	0x4
+ 332 002e 05       		.byte	0x5
+ 333 002f 696E7400 		.ascii	"int\000"
+ 334 0033 02       		.uleb128 0x2
+ 335 0034 08       		.byte	0x8
+ 336 0035 05       		.byte	0x5
+ 337 0036 5E010000 		.4byte	.LASF1
+ 338 003a 02       		.uleb128 0x2
+ 339 003b 08       		.byte	0x8
+ 340 003c 04       		.byte	0x4
+ 341 003d 14020000 		.4byte	.LASF2
+ 342 0041 02       		.uleb128 0x2
+ 343 0042 01       		.byte	0x1
+ 344 0043 06       		.byte	0x6
+ 345 0044 41020000 		.4byte	.LASF3
+ 346 0048 02       		.uleb128 0x2
+ 347 0049 01       		.byte	0x1
+ 348 004a 08       		.byte	0x8
+ 349 004b 20020000 		.4byte	.LASF4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 10
+
+
+ 350 004f 02       		.uleb128 0x2
+ 351 0050 02       		.byte	0x2
+ 352 0051 05       		.byte	0x5
+ 353 0052 51000000 		.4byte	.LASF5
+ 354 0056 02       		.uleb128 0x2
+ 355 0057 02       		.byte	0x2
+ 356 0058 07       		.byte	0x7
+ 357 0059 55030000 		.4byte	.LASF6
+ 358 005d 02       		.uleb128 0x2
+ 359 005e 04       		.byte	0x4
+ 360 005f 05       		.byte	0x5
+ 361 0060 90010000 		.4byte	.LASF7
+ 362 0064 02       		.uleb128 0x2
+ 363 0065 04       		.byte	0x4
+ 364 0066 07       		.byte	0x7
+ 365 0067 7D040000 		.4byte	.LASF8
+ 366 006b 02       		.uleb128 0x2
+ 367 006c 08       		.byte	0x8
+ 368 006d 07       		.byte	0x7
+ 369 006e 4D020000 		.4byte	.LASF9
+ 370 0072 02       		.uleb128 0x2
+ 371 0073 04       		.byte	0x4
+ 372 0074 07       		.byte	0x7
+ 373 0075 11050000 		.4byte	.LASF10
+ 374 0079 02       		.uleb128 0x2
+ 375 007a 01       		.byte	0x1
+ 376 007b 08       		.byte	0x8
+ 377 007c F6030000 		.4byte	.LASF11
+ 378 0080 04       		.uleb128 0x4
+ 379 0081 D2000000 		.4byte	.LASF12
+ 380 0085 02       		.byte	0x2
+ 381 0086 91       		.byte	0x91
+ 382 0087 48000000 		.4byte	0x48
+ 383 008b 04       		.uleb128 0x4
+ 384 008c 92020000 		.4byte	.LASF13
+ 385 0090 02       		.byte	0x2
+ 386 0091 93       		.byte	0x93
+ 387 0092 56000000 		.4byte	0x56
+ 388 0096 02       		.uleb128 0x2
+ 389 0097 04       		.byte	0x4
+ 390 0098 04       		.byte	0x4
+ 391 0099 2A010000 		.4byte	.LASF14
+ 392 009d 02       		.uleb128 0x2
+ 393 009e 08       		.byte	0x8
+ 394 009f 04       		.byte	0x4
+ 395 00a0 8F040000 		.4byte	.LASF15
+ 396 00a4 05       		.uleb128 0x5
+ 397 00a5 01       		.byte	0x1
+ 398 00a6 41000000 		.4byte	0x41
+ 399 00aa 02       		.byte	0x2
+ 400 00ab CF       		.byte	0xcf
+ 401 00ac 53010000 		.4byte	0x153
+ 402 00b0 06       		.uleb128 0x6
+ 403 00b1 20000000 		.4byte	.LASF16
+ 404 00b5 00       		.byte	0
+ 405 00b6 07       		.uleb128 0x7
+ 406 00b7 3D050000 		.4byte	.LASF17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 11
+
+
+ 407 00bb 7F       		.sleb128 -1
+ 408 00bc 07       		.uleb128 0x7
+ 409 00bd A7020000 		.4byte	.LASF18
+ 410 00c1 7E       		.sleb128 -2
+ 411 00c2 07       		.uleb128 0x7
+ 412 00c3 87000000 		.4byte	.LASF19
+ 413 00c7 7D       		.sleb128 -3
+ 414 00c8 07       		.uleb128 0x7
+ 415 00c9 01040000 		.4byte	.LASF20
+ 416 00cd 7C       		.sleb128 -4
+ 417 00ce 07       		.uleb128 0x7
+ 418 00cf 1B010000 		.4byte	.LASF21
+ 419 00d3 7B       		.sleb128 -5
+ 420 00d4 07       		.uleb128 0x7
+ 421 00d5 5B000000 		.4byte	.LASF22
+ 422 00d9 7A       		.sleb128 -6
+ 423 00da 07       		.uleb128 0x7
+ 424 00db 99010000 		.4byte	.LASF23
+ 425 00df 79       		.sleb128 -7
+ 426 00e0 07       		.uleb128 0x7
+ 427 00e1 11040000 		.4byte	.LASF24
+ 428 00e5 78       		.sleb128 -8
+ 429 00e6 07       		.uleb128 0x7
+ 430 00e7 B5020000 		.4byte	.LASF25
+ 431 00eb 77       		.sleb128 -9
+ 432 00ec 07       		.uleb128 0x7
+ 433 00ed C1010000 		.4byte	.LASF26
+ 434 00f1 76       		.sleb128 -10
+ 435 00f2 07       		.uleb128 0x7
+ 436 00f3 76050000 		.4byte	.LASF27
+ 437 00f7 75       		.sleb128 -11
+ 438 00f8 07       		.uleb128 0x7
+ 439 00f9 84020000 		.4byte	.LASF28
+ 440 00fd 74       		.sleb128 -12
+ 441 00fe 07       		.uleb128 0x7
+ 442 00ff A9040000 		.4byte	.LASF29
+ 443 0103 73       		.sleb128 -13
+ 444 0104 07       		.uleb128 0x7
+ 445 0105 0D000000 		.4byte	.LASF30
+ 446 0109 72       		.sleb128 -14
+ 447 010a 07       		.uleb128 0x7
+ 448 010b 3D000000 		.4byte	.LASF31
+ 449 010f 71       		.sleb128 -15
+ 450 0110 07       		.uleb128 0x7
+ 451 0111 DF010000 		.4byte	.LASF32
+ 452 0115 70       		.sleb128 -16
+ 453 0116 07       		.uleb128 0x7
+ 454 0117 95000000 		.4byte	.LASF33
+ 455 011b 6F       		.sleb128 -17
+ 456 011c 07       		.uleb128 0x7
+ 457 011d 6C000000 		.4byte	.LASF34
+ 458 0121 6E       		.sleb128 -18
+ 459 0122 07       		.uleb128 0x7
+ 460 0123 6C010000 		.4byte	.LASF35
+ 461 0127 6D       		.sleb128 -19
+ 462 0128 07       		.uleb128 0x7
+ 463 0129 2E020000 		.4byte	.LASF36
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 12
+
+
+ 464 012d 6C       		.sleb128 -20
+ 465 012e 07       		.uleb128 0x7
+ 466 012f F0010000 		.4byte	.LASF37
+ 467 0133 6B       		.sleb128 -21
+ 468 0134 07       		.uleb128 0x7
+ 469 0135 24050000 		.4byte	.LASF38
+ 470 0139 6A       		.sleb128 -22
+ 471 013a 07       		.uleb128 0x7
+ 472 013b DA000000 		.4byte	.LASF39
+ 473 013f 69       		.sleb128 -23
+ 474 0140 07       		.uleb128 0x7
+ 475 0141 7F010000 		.4byte	.LASF40
+ 476 0145 68       		.sleb128 -24
+ 477 0146 07       		.uleb128 0x7
+ 478 0147 45010000 		.4byte	.LASF41
+ 479 014b 67       		.sleb128 -25
+ 480 014c 06       		.uleb128 0x6
+ 481 014d 96040000 		.4byte	.LASF42
+ 482 0151 01       		.byte	0x1
+ 483 0152 00       		.byte	0
+ 484 0153 04       		.uleb128 0x4
+ 485 0154 67050000 		.4byte	.LASF43
+ 486 0158 02       		.byte	0x2
+ 487 0159 EB       		.byte	0xeb
+ 488 015a A4000000 		.4byte	0xa4
+ 489 015e 05       		.uleb128 0x5
+ 490 015f 02       		.byte	0x2
+ 491 0160 56000000 		.4byte	0x56
+ 492 0164 03       		.byte	0x3
+ 493 0165 5C       		.byte	0x5c
+ 494 0166 FC010000 		.4byte	0x1fc
+ 495 016a 08       		.uleb128 0x8
+ 496 016b 0E020000 		.4byte	.LASF44
+ 497 016f FFFF     		.2byte	0xffff
+ 498 0171 06       		.uleb128 0x6
+ 499 0172 71020000 		.4byte	.LASF45
+ 500 0176 00       		.byte	0
+ 501 0177 08       		.uleb128 0x8
+ 502 0178 51050000 		.4byte	.LASF46
+ 503 017c 00F8     		.2byte	0xf800
+ 504 017e 08       		.uleb128 0x8
+ 505 017f 62050000 		.4byte	.LASF47
+ 506 0183 1FF8     		.2byte	0xf81f
+ 507 0185 08       		.uleb128 0x8
+ 508 0186 01010000 		.4byte	.LASF48
+ 509 018a FF07     		.2byte	0x7ff
+ 510 018c 08       		.uleb128 0x8
+ 511 018d CC000000 		.4byte	.LASF49
+ 512 0191 E0FF     		.2byte	0xffe0
+ 513 0193 09       		.uleb128 0x9
+ 514 0194 52454400 		.ascii	"RED\000"
+ 515 0198 1F       		.byte	0x1f
+ 516 0199 08       		.uleb128 0x8
+ 517 019a A1040000 		.4byte	.LASF50
+ 518 019e 1FF8     		.2byte	0xf81f
+ 519 01a0 08       		.uleb128 0x8
+ 520 01a1 46050000 		.4byte	.LASF51
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 13
+
+
+ 521 01a5 E007     		.2byte	0x7e0
+ 522 01a7 08       		.uleb128 0x8
+ 523 01a8 4C050000 		.4byte	.LASF52
+ 524 01ac E0FF     		.2byte	0xffe0
+ 525 01ae 08       		.uleb128 0x8
+ 526 01af F1000000 		.4byte	.LASF53
+ 527 01b3 FF07     		.2byte	0x7ff
+ 528 01b5 08       		.uleb128 0x8
+ 529 01b6 E8040000 		.4byte	.LASF54
+ 530 01ba 3D02     		.2byte	0x23d
+ 531 01bc 08       		.uleb128 0x8
+ 532 01bd FB030000 		.4byte	.LASF55
+ 533 01c1 3FE0     		.2byte	0xe03f
+ 534 01c3 08       		.uleb128 0x8
+ 535 01c4 16010000 		.4byte	.LASF56
+ 536 01c8 210C     		.2byte	0xc21
+ 537 01ca 08       		.uleb128 0x8
+ 538 01cb D0040000 		.4byte	.LASF57
+ 539 01cf 89F3     		.2byte	0xf389
+ 540 01d1 08       		.uleb128 0x8
+ 541 01d2 67040000 		.4byte	.LASF58
+ 542 01d6 BE3E     		.2byte	0x3ebe
+ 543 01d8 08       		.uleb128 0x8
+ 544 01d9 4C030000 		.4byte	.LASF59
+ 545 01dd 2A1A     		.2byte	0x1a2a
+ 546 01df 08       		.uleb128 0x8
+ 547 01e0 B0000000 		.4byte	.LASF60
+ 548 01e4 21F8     		.2byte	0xf821
+ 549 01e6 08       		.uleb128 0x8
+ 550 01e7 30010000 		.4byte	.LASF61
+ 551 01eb 6318     		.2byte	0x1863
+ 552 01ed 08       		.uleb128 0x8
+ 553 01ee 1A050000 		.4byte	.LASF62
+ 554 01f2 658A     		.2byte	0x8a65
+ 555 01f4 08       		.uleb128 0x8
+ 556 01f5 76040000 		.4byte	.LASF63
+ 557 01f9 D448     		.2byte	0x48d4
+ 558 01fb 00       		.byte	0
+ 559 01fc 04       		.uleb128 0x4
+ 560 01fd 64020000 		.4byte	.LASF64
+ 561 0201 03       		.byte	0x3
+ 562 0202 72       		.byte	0x72
+ 563 0203 5E010000 		.4byte	0x15e
+ 564 0207 0A       		.uleb128 0xa
+ 565 0208 BB000000 		.4byte	.LASF66
+ 566 020c 08       		.byte	0x8
+ 567 020d 04       		.byte	0x4
+ 568 020e 6B       		.byte	0x6b
+ 569 020f 20020000 		.4byte	0x220
+ 570 0213 0B       		.uleb128 0xb
+ 571 0214 9B020000 		.4byte	.LASF68
+ 572 0218 04       		.byte	0x4
+ 573 0219 6C       		.byte	0x6c
+ 574 021a 20020000 		.4byte	0x220
+ 575 021e 00       		.byte	0
+ 576 021f 00       		.byte	0
+ 577 0220 0C       		.uleb128 0xc
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 14
+
+
+ 578 0221 8B000000 		.4byte	0x8b
+ 579 0225 30020000 		.4byte	0x230
+ 580 0229 0D       		.uleb128 0xd
+ 581 022a 72000000 		.4byte	0x72
+ 582 022e 03       		.byte	0x3
+ 583 022f 00       		.byte	0
+ 584 0230 04       		.uleb128 0x4
+ 585 0231 2B000000 		.4byte	.LASF65
+ 586 0235 04       		.byte	0x4
+ 587 0236 6E       		.byte	0x6e
+ 588 0237 07020000 		.4byte	0x207
+ 589 023b 0A       		.uleb128 0xa
+ 590 023c 35040000 		.4byte	.LASF67
+ 591 0240 A4       		.byte	0xa4
+ 592 0241 04       		.byte	0x4
+ 593 0242 72       		.byte	0x72
+ 594 0243 6C020000 		.4byte	0x26c
+ 595 0247 0B       		.uleb128 0xb
+ 596 0248 BB040000 		.4byte	.LASF69
+ 597 024c 04       		.byte	0x4
+ 598 024d 73       		.byte	0x73
+ 599 024e 6C020000 		.4byte	0x26c
+ 600 0252 00       		.byte	0
+ 601 0253 0B       		.uleb128 0xb
+ 602 0254 81000000 		.4byte	.LASF70
+ 603 0258 04       		.byte	0x4
+ 604 0259 74       		.byte	0x74
+ 605 025a FC010000 		.4byte	0x1fc
+ 606 025e A0       		.byte	0xa0
+ 607 025f 0B       		.uleb128 0xb
+ 608 0260 F8000000 		.4byte	.LASF71
+ 609 0264 04       		.byte	0x4
+ 610 0265 75       		.byte	0x75
+ 611 0266 80000000 		.4byte	0x80
+ 612 026a A2       		.byte	0xa2
+ 613 026b 00       		.byte	0
+ 614 026c 0C       		.uleb128 0xc
+ 615 026d 30020000 		.4byte	0x230
+ 616 0271 7C020000 		.4byte	0x27c
+ 617 0275 0D       		.uleb128 0xd
+ 618 0276 72000000 		.4byte	0x72
+ 619 027a 13       		.byte	0x13
+ 620 027b 00       		.byte	0
+ 621 027c 04       		.uleb128 0x4
+ 622 027d 36010000 		.4byte	.LASF72
+ 623 0281 04       		.byte	0x4
+ 624 0282 77       		.byte	0x77
+ 625 0283 3B020000 		.4byte	0x23b
+ 626 0287 04       		.uleb128 0x4
+ 627 0288 C1040000 		.4byte	.LASF73
+ 628 028c 04       		.byte	0x4
+ 629 028d 79       		.byte	0x79
+ 630 028e 7C020000 		.4byte	0x27c
+ 631 0292 0E       		.uleb128 0xe
+ 632 0293 D60C     		.2byte	0xcd6
+ 633 0295 04       		.byte	0x4
+ 634 0296 7B       		.byte	0x7b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 15
+
+
+ 635 0297 CF020000 		.4byte	0x2cf
+ 636 029b 0B       		.uleb128 0xb
+ 637 029c 36050000 		.4byte	.LASF74
+ 638 02a0 04       		.byte	0x4
+ 639 02a1 7C       		.byte	0x7c
+ 640 02a2 CF020000 		.4byte	0x2cf
+ 641 02a6 00       		.byte	0
+ 642 02a7 0F       		.uleb128 0xf
+ 643 02a8 56050000 		.4byte	.LASF75
+ 644 02ac 04       		.byte	0x4
+ 645 02ad 7D       		.byte	0x7d
+ 646 02ae 8B000000 		.4byte	0x8b
+ 647 02b2 D00C     		.2byte	0xcd0
+ 648 02b4 0F       		.uleb128 0xf
+ 649 02b5 00000000 		.4byte	.LASF76
+ 650 02b9 04       		.byte	0x4
+ 651 02ba 7E       		.byte	0x7e
+ 652 02bb 8B000000 		.4byte	0x8b
+ 653 02bf D20C     		.2byte	0xcd2
+ 654 02c1 0F       		.uleb128 0xf
+ 655 02c2 02020000 		.4byte	.LASF77
+ 656 02c6 04       		.byte	0x4
+ 657 02c7 7F       		.byte	0x7f
+ 658 02c8 8B000000 		.4byte	0x8b
+ 659 02cc D40C     		.2byte	0xcd4
+ 660 02ce 00       		.byte	0
+ 661 02cf 0C       		.uleb128 0xc
+ 662 02d0 87020000 		.4byte	0x287
+ 663 02d4 DF020000 		.4byte	0x2df
+ 664 02d8 0D       		.uleb128 0xd
+ 665 02d9 72000000 		.4byte	0x72
+ 666 02dd 13       		.byte	0x13
+ 667 02de 00       		.byte	0
+ 668 02df 04       		.uleb128 0x4
+ 669 02e0 6C050000 		.4byte	.LASF78
+ 670 02e4 04       		.byte	0x4
+ 671 02e5 80       		.byte	0x80
+ 672 02e6 92020000 		.4byte	0x292
+ 673 02ea 10       		.uleb128 0x10
+ 674 02eb 06010000 		.4byte	.LASF79
+ 675 02ef 01       		.byte	0x1
+ 676 02f0 44       		.byte	0x44
+ 677 02f1 53010000 		.4byte	0x153
+ 678 02f5 00000000 		.4byte	.LFB2
+ 679 02f9 4A000000 		.4byte	.LFE2-.LFB2
+ 680 02fd 01       		.uleb128 0x1
+ 681 02fe 9C       		.byte	0x9c
+ 682 02ff 25030000 		.4byte	0x325
+ 683 0303 11       		.uleb128 0x11
+ 684 0304 6D6500   		.ascii	"me\000"
+ 685 0307 01       		.byte	0x1
+ 686 0308 44       		.byte	0x44
+ 687 0309 2B030000 		.4byte	0x32b
+ 688 030d 00000000 		.4byte	.LLST0
+ 689 0311 12       		.uleb128 0x12
+ 690 0312 00000000 		.4byte	.Ldebug_ranges0+0
+ 691 0316 13       		.uleb128 0x13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 16
+
+
+ 692 0317 6900     		.ascii	"i\000"
+ 693 0319 01       		.byte	0x1
+ 694 031a 4C       		.byte	0x4c
+ 695 031b 8B000000 		.4byte	0x8b
+ 696 031f 50000000 		.4byte	.LLST1
+ 697 0323 00       		.byte	0
+ 698 0324 00       		.byte	0
+ 699 0325 14       		.uleb128 0x14
+ 700 0326 04       		.byte	0x4
+ 701 0327 DF020000 		.4byte	0x2df
+ 702 032b 15       		.uleb128 0x15
+ 703 032c 25030000 		.4byte	0x325
+ 704 0330 10       		.uleb128 0x10
+ 705 0331 26040000 		.4byte	.LASF80
+ 706 0335 01       		.byte	0x1
+ 707 0336 3A       		.byte	0x3a
+ 708 0337 53010000 		.4byte	0x153
+ 709 033b 00000000 		.4byte	.LFB1
+ 710 033f 08000000 		.4byte	.LFE1-.LFB1
+ 711 0343 01       		.uleb128 0x1
+ 712 0344 9C       		.byte	0x9c
+ 713 0345 69030000 		.4byte	0x369
+ 714 0349 11       		.uleb128 0x11
+ 715 034a 6D6500   		.ascii	"me\000"
+ 716 034d 01       		.byte	0x1
+ 717 034e 3A       		.byte	0x3a
+ 718 034f 2B030000 		.4byte	0x32b
+ 719 0353 85000000 		.4byte	.LLST2
+ 720 0357 16       		.uleb128 0x16
+ 721 0358 06000000 		.4byte	.LVL10
+ 722 035c EA020000 		.4byte	0x2ea
+ 723 0360 17       		.uleb128 0x17
+ 724 0361 01       		.uleb128 0x1
+ 725 0362 50       		.byte	0x50
+ 726 0363 03       		.uleb128 0x3
+ 727 0364 F3       		.byte	0xf3
+ 728 0365 01       		.uleb128 0x1
+ 729 0366 50       		.byte	0x50
+ 730 0367 00       		.byte	0
+ 731 0368 00       		.byte	0
+ 732 0369 10       		.uleb128 0x10
+ 733 036a CF010000 		.4byte	.LASF81
+ 734 036e 01       		.byte	0x1
+ 735 036f 61       		.byte	0x61
+ 736 0370 53010000 		.4byte	0x153
+ 737 0374 00000000 		.4byte	.LFB3
+ 738 0378 4C000000 		.4byte	.LFE3-.LFB3
+ 739 037c 01       		.uleb128 0x1
+ 740 037d 9C       		.byte	0x9c
+ 741 037e B7030000 		.4byte	0x3b7
+ 742 0382 11       		.uleb128 0x11
+ 743 0383 6D6500   		.ascii	"me\000"
+ 744 0386 01       		.byte	0x1
+ 745 0387 61       		.byte	0x61
+ 746 0388 2B030000 		.4byte	0x32b
+ 747 038c A6000000 		.4byte	.LLST3
+ 748 0390 18       		.uleb128 0x18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 17
+
+
+ 749 0391 71040000 		.4byte	.LASF82
+ 750 0395 01       		.byte	0x1
+ 751 0396 61       		.byte	0x61
+ 752 0397 C2030000 		.4byte	0x3c2
+ 753 039b DD000000 		.4byte	.LLST4
+ 754 039f 16       		.uleb128 0x16
+ 755 03a0 24000000 		.4byte	.LVL13
+ 756 03a4 70040000 		.4byte	0x470
+ 757 03a8 17       		.uleb128 0x17
+ 758 03a9 01       		.uleb128 0x1
+ 759 03aa 51       		.byte	0x51
+ 760 03ab 03       		.uleb128 0x3
+ 761 03ac F3       		.byte	0xf3
+ 762 03ad 01       		.uleb128 0x1
+ 763 03ae 51       		.byte	0x51
+ 764 03af 17       		.uleb128 0x17
+ 765 03b0 01       		.uleb128 0x1
+ 766 03b1 52       		.byte	0x52
+ 767 03b2 02       		.uleb128 0x2
+ 768 03b3 08       		.byte	0x8
+ 769 03b4 A4       		.byte	0xa4
+ 770 03b5 00       		.byte	0
+ 771 03b6 00       		.byte	0
+ 772 03b7 14       		.uleb128 0x14
+ 773 03b8 04       		.byte	0x4
+ 774 03b9 BD030000 		.4byte	0x3bd
+ 775 03bd 15       		.uleb128 0x15
+ 776 03be 87020000 		.4byte	0x287
+ 777 03c2 15       		.uleb128 0x15
+ 778 03c3 B7030000 		.4byte	0x3b7
+ 779 03c7 10       		.uleb128 0x10
+ 780 03c8 D9040000 		.4byte	.LASF83
+ 781 03cc 01       		.byte	0x1
+ 782 03cd 78       		.byte	0x78
+ 783 03ce 53010000 		.4byte	0x153
+ 784 03d2 00000000 		.4byte	.LFB4
+ 785 03d6 54000000 		.4byte	.LFE4-.LFB4
+ 786 03da 01       		.uleb128 0x1
+ 787 03db 9C       		.byte	0x9c
+ 788 03dc 15040000 		.4byte	0x415
+ 789 03e0 11       		.uleb128 0x11
+ 790 03e1 6D6500   		.ascii	"me\000"
+ 791 03e4 01       		.byte	0x1
+ 792 03e5 78       		.byte	0x78
+ 793 03e6 2B030000 		.4byte	0x32b
+ 794 03ea 09010000 		.4byte	.LLST5
+ 795 03ee 18       		.uleb128 0x18
+ 796 03ef 71040000 		.4byte	.LASF82
+ 797 03f3 01       		.byte	0x1
+ 798 03f4 78       		.byte	0x78
+ 799 03f5 1B040000 		.4byte	0x41b
+ 800 03f9 40010000 		.4byte	.LLST6
+ 801 03fd 16       		.uleb128 0x16
+ 802 03fe 24000000 		.4byte	.LVL19
+ 803 0402 70040000 		.4byte	0x470
+ 804 0406 17       		.uleb128 0x17
+ 805 0407 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 18
+
+
+ 806 0408 50       		.byte	0x50
+ 807 0409 03       		.uleb128 0x3
+ 808 040a F3       		.byte	0xf3
+ 809 040b 01       		.uleb128 0x1
+ 810 040c 51       		.byte	0x51
+ 811 040d 17       		.uleb128 0x17
+ 812 040e 01       		.uleb128 0x1
+ 813 040f 52       		.byte	0x52
+ 814 0410 02       		.uleb128 0x2
+ 815 0411 08       		.byte	0x8
+ 816 0412 A4       		.byte	0xa4
+ 817 0413 00       		.byte	0
+ 818 0414 00       		.byte	0
+ 819 0415 14       		.uleb128 0x14
+ 820 0416 04       		.byte	0x4
+ 821 0417 87020000 		.4byte	0x287
+ 822 041b 15       		.uleb128 0x15
+ 823 041c 15040000 		.4byte	0x415
+ 824 0420 10       		.uleb128 0x10
+ 825 0421 AB010000 		.4byte	.LASF84
+ 826 0425 01       		.byte	0x1
+ 827 0426 8E       		.byte	0x8e
+ 828 0427 8B000000 		.4byte	0x8b
+ 829 042b 00000000 		.4byte	.LFB5
+ 830 042f 0C000000 		.4byte	.LFE5-.LFB5
+ 831 0433 01       		.uleb128 0x1
+ 832 0434 9C       		.byte	0x9c
+ 833 0435 48040000 		.4byte	0x448
+ 834 0439 11       		.uleb128 0x11
+ 835 043a 6D6500   		.ascii	"me\000"
+ 836 043d 01       		.byte	0x1
+ 837 043e 8E       		.byte	0x8e
+ 838 043f 2B030000 		.4byte	0x32b
+ 839 0443 77010000 		.4byte	.LLST7
+ 840 0447 00       		.byte	0
+ 841 0448 10       		.uleb128 0x10
+ 842 0449 43040000 		.4byte	.LASF85
+ 843 044d 01       		.byte	0x1
+ 844 044e 99       		.byte	0x99
+ 845 044f 8B000000 		.4byte	0x8b
+ 846 0453 00000000 		.4byte	.LFB6
+ 847 0457 06000000 		.4byte	.LFE6-.LFB6
+ 848 045b 01       		.uleb128 0x1
+ 849 045c 9C       		.byte	0x9c
+ 850 045d 70040000 		.4byte	0x470
+ 851 0461 11       		.uleb128 0x11
+ 852 0462 6D6500   		.ascii	"me\000"
+ 853 0465 01       		.byte	0x1
+ 854 0466 99       		.byte	0x99
+ 855 0467 2B030000 		.4byte	0x32b
+ 856 046b 98010000 		.4byte	.LLST8
+ 857 046f 00       		.byte	0
+ 858 0470 19       		.uleb128 0x19
+ 859 0471 A9000000 		.4byte	.LASF89
+ 860 0475 A9000000 		.4byte	.LASF89
+ 861 0479 00       		.byte	0
+ 862              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 19
+
+
+ 863              	.Ldebug_abbrev0:
+ 864 0000 01       		.uleb128 0x1
+ 865 0001 11       		.uleb128 0x11
+ 866 0002 01       		.byte	0x1
+ 867 0003 25       		.uleb128 0x25
+ 868 0004 0E       		.uleb128 0xe
+ 869 0005 13       		.uleb128 0x13
+ 870 0006 0B       		.uleb128 0xb
+ 871 0007 03       		.uleb128 0x3
+ 872 0008 0E       		.uleb128 0xe
+ 873 0009 1B       		.uleb128 0x1b
+ 874 000a 0E       		.uleb128 0xe
+ 875 000b 55       		.uleb128 0x55
+ 876 000c 17       		.uleb128 0x17
+ 877 000d 11       		.uleb128 0x11
+ 878 000e 01       		.uleb128 0x1
+ 879 000f 10       		.uleb128 0x10
+ 880 0010 17       		.uleb128 0x17
+ 881 0011 00       		.byte	0
+ 882 0012 00       		.byte	0
+ 883 0013 02       		.uleb128 0x2
+ 884 0014 24       		.uleb128 0x24
+ 885 0015 00       		.byte	0
+ 886 0016 0B       		.uleb128 0xb
+ 887 0017 0B       		.uleb128 0xb
+ 888 0018 3E       		.uleb128 0x3e
+ 889 0019 0B       		.uleb128 0xb
+ 890 001a 03       		.uleb128 0x3
+ 891 001b 0E       		.uleb128 0xe
+ 892 001c 00       		.byte	0
+ 893 001d 00       		.byte	0
+ 894 001e 03       		.uleb128 0x3
+ 895 001f 24       		.uleb128 0x24
+ 896 0020 00       		.byte	0
+ 897 0021 0B       		.uleb128 0xb
+ 898 0022 0B       		.uleb128 0xb
+ 899 0023 3E       		.uleb128 0x3e
+ 900 0024 0B       		.uleb128 0xb
+ 901 0025 03       		.uleb128 0x3
+ 902 0026 08       		.uleb128 0x8
+ 903 0027 00       		.byte	0
+ 904 0028 00       		.byte	0
+ 905 0029 04       		.uleb128 0x4
+ 906 002a 16       		.uleb128 0x16
+ 907 002b 00       		.byte	0
+ 908 002c 03       		.uleb128 0x3
+ 909 002d 0E       		.uleb128 0xe
+ 910 002e 3A       		.uleb128 0x3a
+ 911 002f 0B       		.uleb128 0xb
+ 912 0030 3B       		.uleb128 0x3b
+ 913 0031 0B       		.uleb128 0xb
+ 914 0032 49       		.uleb128 0x49
+ 915 0033 13       		.uleb128 0x13
+ 916 0034 00       		.byte	0
+ 917 0035 00       		.byte	0
+ 918 0036 05       		.uleb128 0x5
+ 919 0037 04       		.uleb128 0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 20
+
+
+ 920 0038 01       		.byte	0x1
+ 921 0039 0B       		.uleb128 0xb
+ 922 003a 0B       		.uleb128 0xb
+ 923 003b 49       		.uleb128 0x49
+ 924 003c 13       		.uleb128 0x13
+ 925 003d 3A       		.uleb128 0x3a
+ 926 003e 0B       		.uleb128 0xb
+ 927 003f 3B       		.uleb128 0x3b
+ 928 0040 0B       		.uleb128 0xb
+ 929 0041 01       		.uleb128 0x1
+ 930 0042 13       		.uleb128 0x13
+ 931 0043 00       		.byte	0
+ 932 0044 00       		.byte	0
+ 933 0045 06       		.uleb128 0x6
+ 934 0046 28       		.uleb128 0x28
+ 935 0047 00       		.byte	0
+ 936 0048 03       		.uleb128 0x3
+ 937 0049 0E       		.uleb128 0xe
+ 938 004a 1C       		.uleb128 0x1c
+ 939 004b 0B       		.uleb128 0xb
+ 940 004c 00       		.byte	0
+ 941 004d 00       		.byte	0
+ 942 004e 07       		.uleb128 0x7
+ 943 004f 28       		.uleb128 0x28
+ 944 0050 00       		.byte	0
+ 945 0051 03       		.uleb128 0x3
+ 946 0052 0E       		.uleb128 0xe
+ 947 0053 1C       		.uleb128 0x1c
+ 948 0054 0D       		.uleb128 0xd
+ 949 0055 00       		.byte	0
+ 950 0056 00       		.byte	0
+ 951 0057 08       		.uleb128 0x8
+ 952 0058 28       		.uleb128 0x28
+ 953 0059 00       		.byte	0
+ 954 005a 03       		.uleb128 0x3
+ 955 005b 0E       		.uleb128 0xe
+ 956 005c 1C       		.uleb128 0x1c
+ 957 005d 05       		.uleb128 0x5
+ 958 005e 00       		.byte	0
+ 959 005f 00       		.byte	0
+ 960 0060 09       		.uleb128 0x9
+ 961 0061 28       		.uleb128 0x28
+ 962 0062 00       		.byte	0
+ 963 0063 03       		.uleb128 0x3
+ 964 0064 08       		.uleb128 0x8
+ 965 0065 1C       		.uleb128 0x1c
+ 966 0066 0B       		.uleb128 0xb
+ 967 0067 00       		.byte	0
+ 968 0068 00       		.byte	0
+ 969 0069 0A       		.uleb128 0xa
+ 970 006a 13       		.uleb128 0x13
+ 971 006b 01       		.byte	0x1
+ 972 006c 03       		.uleb128 0x3
+ 973 006d 0E       		.uleb128 0xe
+ 974 006e 0B       		.uleb128 0xb
+ 975 006f 0B       		.uleb128 0xb
+ 976 0070 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 21
+
+
+ 977 0071 0B       		.uleb128 0xb
+ 978 0072 3B       		.uleb128 0x3b
+ 979 0073 0B       		.uleb128 0xb
+ 980 0074 01       		.uleb128 0x1
+ 981 0075 13       		.uleb128 0x13
+ 982 0076 00       		.byte	0
+ 983 0077 00       		.byte	0
+ 984 0078 0B       		.uleb128 0xb
+ 985 0079 0D       		.uleb128 0xd
+ 986 007a 00       		.byte	0
+ 987 007b 03       		.uleb128 0x3
+ 988 007c 0E       		.uleb128 0xe
+ 989 007d 3A       		.uleb128 0x3a
+ 990 007e 0B       		.uleb128 0xb
+ 991 007f 3B       		.uleb128 0x3b
+ 992 0080 0B       		.uleb128 0xb
+ 993 0081 49       		.uleb128 0x49
+ 994 0082 13       		.uleb128 0x13
+ 995 0083 38       		.uleb128 0x38
+ 996 0084 0B       		.uleb128 0xb
+ 997 0085 00       		.byte	0
+ 998 0086 00       		.byte	0
+ 999 0087 0C       		.uleb128 0xc
+ 1000 0088 01       		.uleb128 0x1
+ 1001 0089 01       		.byte	0x1
+ 1002 008a 49       		.uleb128 0x49
+ 1003 008b 13       		.uleb128 0x13
+ 1004 008c 01       		.uleb128 0x1
+ 1005 008d 13       		.uleb128 0x13
+ 1006 008e 00       		.byte	0
+ 1007 008f 00       		.byte	0
+ 1008 0090 0D       		.uleb128 0xd
+ 1009 0091 21       		.uleb128 0x21
+ 1010 0092 00       		.byte	0
+ 1011 0093 49       		.uleb128 0x49
+ 1012 0094 13       		.uleb128 0x13
+ 1013 0095 2F       		.uleb128 0x2f
+ 1014 0096 0B       		.uleb128 0xb
+ 1015 0097 00       		.byte	0
+ 1016 0098 00       		.byte	0
+ 1017 0099 0E       		.uleb128 0xe
+ 1018 009a 13       		.uleb128 0x13
+ 1019 009b 01       		.byte	0x1
+ 1020 009c 0B       		.uleb128 0xb
+ 1021 009d 05       		.uleb128 0x5
+ 1022 009e 3A       		.uleb128 0x3a
+ 1023 009f 0B       		.uleb128 0xb
+ 1024 00a0 3B       		.uleb128 0x3b
+ 1025 00a1 0B       		.uleb128 0xb
+ 1026 00a2 01       		.uleb128 0x1
+ 1027 00a3 13       		.uleb128 0x13
+ 1028 00a4 00       		.byte	0
+ 1029 00a5 00       		.byte	0
+ 1030 00a6 0F       		.uleb128 0xf
+ 1031 00a7 0D       		.uleb128 0xd
+ 1032 00a8 00       		.byte	0
+ 1033 00a9 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 22
+
+
+ 1034 00aa 0E       		.uleb128 0xe
+ 1035 00ab 3A       		.uleb128 0x3a
+ 1036 00ac 0B       		.uleb128 0xb
+ 1037 00ad 3B       		.uleb128 0x3b
+ 1038 00ae 0B       		.uleb128 0xb
+ 1039 00af 49       		.uleb128 0x49
+ 1040 00b0 13       		.uleb128 0x13
+ 1041 00b1 38       		.uleb128 0x38
+ 1042 00b2 05       		.uleb128 0x5
+ 1043 00b3 00       		.byte	0
+ 1044 00b4 00       		.byte	0
+ 1045 00b5 10       		.uleb128 0x10
+ 1046 00b6 2E       		.uleb128 0x2e
+ 1047 00b7 01       		.byte	0x1
+ 1048 00b8 3F       		.uleb128 0x3f
+ 1049 00b9 19       		.uleb128 0x19
+ 1050 00ba 03       		.uleb128 0x3
+ 1051 00bb 0E       		.uleb128 0xe
+ 1052 00bc 3A       		.uleb128 0x3a
+ 1053 00bd 0B       		.uleb128 0xb
+ 1054 00be 3B       		.uleb128 0x3b
+ 1055 00bf 0B       		.uleb128 0xb
+ 1056 00c0 27       		.uleb128 0x27
+ 1057 00c1 19       		.uleb128 0x19
+ 1058 00c2 49       		.uleb128 0x49
+ 1059 00c3 13       		.uleb128 0x13
+ 1060 00c4 11       		.uleb128 0x11
+ 1061 00c5 01       		.uleb128 0x1
+ 1062 00c6 12       		.uleb128 0x12
+ 1063 00c7 06       		.uleb128 0x6
+ 1064 00c8 40       		.uleb128 0x40
+ 1065 00c9 18       		.uleb128 0x18
+ 1066 00ca 9742     		.uleb128 0x2117
+ 1067 00cc 19       		.uleb128 0x19
+ 1068 00cd 01       		.uleb128 0x1
+ 1069 00ce 13       		.uleb128 0x13
+ 1070 00cf 00       		.byte	0
+ 1071 00d0 00       		.byte	0
+ 1072 00d1 11       		.uleb128 0x11
+ 1073 00d2 05       		.uleb128 0x5
+ 1074 00d3 00       		.byte	0
+ 1075 00d4 03       		.uleb128 0x3
+ 1076 00d5 08       		.uleb128 0x8
+ 1077 00d6 3A       		.uleb128 0x3a
+ 1078 00d7 0B       		.uleb128 0xb
+ 1079 00d8 3B       		.uleb128 0x3b
+ 1080 00d9 0B       		.uleb128 0xb
+ 1081 00da 49       		.uleb128 0x49
+ 1082 00db 13       		.uleb128 0x13
+ 1083 00dc 02       		.uleb128 0x2
+ 1084 00dd 17       		.uleb128 0x17
+ 1085 00de 00       		.byte	0
+ 1086 00df 00       		.byte	0
+ 1087 00e0 12       		.uleb128 0x12
+ 1088 00e1 0B       		.uleb128 0xb
+ 1089 00e2 01       		.byte	0x1
+ 1090 00e3 55       		.uleb128 0x55
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 23
+
+
+ 1091 00e4 17       		.uleb128 0x17
+ 1092 00e5 00       		.byte	0
+ 1093 00e6 00       		.byte	0
+ 1094 00e7 13       		.uleb128 0x13
+ 1095 00e8 34       		.uleb128 0x34
+ 1096 00e9 00       		.byte	0
+ 1097 00ea 03       		.uleb128 0x3
+ 1098 00eb 08       		.uleb128 0x8
+ 1099 00ec 3A       		.uleb128 0x3a
+ 1100 00ed 0B       		.uleb128 0xb
+ 1101 00ee 3B       		.uleb128 0x3b
+ 1102 00ef 0B       		.uleb128 0xb
+ 1103 00f0 49       		.uleb128 0x49
+ 1104 00f1 13       		.uleb128 0x13
+ 1105 00f2 02       		.uleb128 0x2
+ 1106 00f3 17       		.uleb128 0x17
+ 1107 00f4 00       		.byte	0
+ 1108 00f5 00       		.byte	0
+ 1109 00f6 14       		.uleb128 0x14
+ 1110 00f7 0F       		.uleb128 0xf
+ 1111 00f8 00       		.byte	0
+ 1112 00f9 0B       		.uleb128 0xb
+ 1113 00fa 0B       		.uleb128 0xb
+ 1114 00fb 49       		.uleb128 0x49
+ 1115 00fc 13       		.uleb128 0x13
+ 1116 00fd 00       		.byte	0
+ 1117 00fe 00       		.byte	0
+ 1118 00ff 15       		.uleb128 0x15
+ 1119 0100 26       		.uleb128 0x26
+ 1120 0101 00       		.byte	0
+ 1121 0102 49       		.uleb128 0x49
+ 1122 0103 13       		.uleb128 0x13
+ 1123 0104 00       		.byte	0
+ 1124 0105 00       		.byte	0
+ 1125 0106 16       		.uleb128 0x16
+ 1126 0107 898201   		.uleb128 0x4109
+ 1127 010a 01       		.byte	0x1
+ 1128 010b 11       		.uleb128 0x11
+ 1129 010c 01       		.uleb128 0x1
+ 1130 010d 31       		.uleb128 0x31
+ 1131 010e 13       		.uleb128 0x13
+ 1132 010f 00       		.byte	0
+ 1133 0110 00       		.byte	0
+ 1134 0111 17       		.uleb128 0x17
+ 1135 0112 8A8201   		.uleb128 0x410a
+ 1136 0115 00       		.byte	0
+ 1137 0116 02       		.uleb128 0x2
+ 1138 0117 18       		.uleb128 0x18
+ 1139 0118 9142     		.uleb128 0x2111
+ 1140 011a 18       		.uleb128 0x18
+ 1141 011b 00       		.byte	0
+ 1142 011c 00       		.byte	0
+ 1143 011d 18       		.uleb128 0x18
+ 1144 011e 05       		.uleb128 0x5
+ 1145 011f 00       		.byte	0
+ 1146 0120 03       		.uleb128 0x3
+ 1147 0121 0E       		.uleb128 0xe
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 24
+
+
+ 1148 0122 3A       		.uleb128 0x3a
+ 1149 0123 0B       		.uleb128 0xb
+ 1150 0124 3B       		.uleb128 0x3b
+ 1151 0125 0B       		.uleb128 0xb
+ 1152 0126 49       		.uleb128 0x49
+ 1153 0127 13       		.uleb128 0x13
+ 1154 0128 02       		.uleb128 0x2
+ 1155 0129 17       		.uleb128 0x17
+ 1156 012a 00       		.byte	0
+ 1157 012b 00       		.byte	0
+ 1158 012c 19       		.uleb128 0x19
+ 1159 012d 2E       		.uleb128 0x2e
+ 1160 012e 00       		.byte	0
+ 1161 012f 3F       		.uleb128 0x3f
+ 1162 0130 19       		.uleb128 0x19
+ 1163 0131 3C       		.uleb128 0x3c
+ 1164 0132 19       		.uleb128 0x19
+ 1165 0133 6E       		.uleb128 0x6e
+ 1166 0134 0E       		.uleb128 0xe
+ 1167 0135 03       		.uleb128 0x3
+ 1168 0136 0E       		.uleb128 0xe
+ 1169 0137 00       		.byte	0
+ 1170 0138 00       		.byte	0
+ 1171 0139 00       		.byte	0
+ 1172              		.section	.debug_loc,"",%progbits
+ 1173              	.Ldebug_loc0:
+ 1174              	.LLST0:
+ 1175 0000 00000000 		.4byte	.LVL0
+ 1176 0004 16000000 		.4byte	.LVL2
+ 1177 0008 0100     		.2byte	0x1
+ 1178 000a 50       		.byte	0x50
+ 1179 000b 16000000 		.4byte	.LVL2
+ 1180 000f 40000000 		.4byte	.LVL5
+ 1181 0013 0100     		.2byte	0x1
+ 1182 0015 54       		.byte	0x54
+ 1183 0016 40000000 		.4byte	.LVL5
+ 1184 001a 44000000 		.4byte	.LVL6
+ 1185 001e 0100     		.2byte	0x1
+ 1186 0020 50       		.byte	0x50
+ 1187 0021 44000000 		.4byte	.LVL6
+ 1188 0025 46000000 		.4byte	.LVL7
+ 1189 0029 0400     		.2byte	0x4
+ 1190 002b F3       		.byte	0xf3
+ 1191 002c 01       		.uleb128 0x1
+ 1192 002d 50       		.byte	0x50
+ 1193 002e 9F       		.byte	0x9f
+ 1194 002f 46000000 		.4byte	.LVL7
+ 1195 0033 48000000 		.4byte	.LVL8
+ 1196 0037 0100     		.2byte	0x1
+ 1197 0039 54       		.byte	0x54
+ 1198 003a 48000000 		.4byte	.LVL8
+ 1199 003e 4A000000 		.4byte	.LFE2
+ 1200 0042 0400     		.2byte	0x4
+ 1201 0044 F3       		.byte	0xf3
+ 1202 0045 01       		.uleb128 0x1
+ 1203 0046 50       		.byte	0x50
+ 1204 0047 9F       		.byte	0x9f
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 25
+
+
+ 1205 0048 00000000 		.4byte	0
+ 1206 004c 00000000 		.4byte	0
+ 1207              	.LLST1:
+ 1208 0050 14000000 		.4byte	.LVL1
+ 1209 0054 16000000 		.4byte	.LVL2
+ 1210 0058 0200     		.2byte	0x2
+ 1211 005a 30       		.byte	0x30
+ 1212 005b 9F       		.byte	0x9f
+ 1213 005c 16000000 		.4byte	.LVL2
+ 1214 0060 36000000 		.4byte	.LVL3
+ 1215 0064 0100     		.2byte	0x1
+ 1216 0066 53       		.byte	0x53
+ 1217 0067 38000000 		.4byte	.LVL4
+ 1218 006b 40000000 		.4byte	.LVL5
+ 1219 006f 0100     		.2byte	0x1
+ 1220 0071 53       		.byte	0x53
+ 1221 0072 46000000 		.4byte	.LVL7
+ 1222 0076 4A000000 		.4byte	.LFE2
+ 1223 007a 0100     		.2byte	0x1
+ 1224 007c 53       		.byte	0x53
+ 1225 007d 00000000 		.4byte	0
+ 1226 0081 00000000 		.4byte	0
+ 1227              	.LLST2:
+ 1228 0085 00000000 		.4byte	.LVL9
+ 1229 0089 05000000 		.4byte	.LVL10-1
+ 1230 008d 0100     		.2byte	0x1
+ 1231 008f 50       		.byte	0x50
+ 1232 0090 05000000 		.4byte	.LVL10-1
+ 1233 0094 08000000 		.4byte	.LFE1
+ 1234 0098 0400     		.2byte	0x4
+ 1235 009a F3       		.byte	0xf3
+ 1236 009b 01       		.uleb128 0x1
+ 1237 009c 50       		.byte	0x50
+ 1238 009d 9F       		.byte	0x9f
+ 1239 009e 00000000 		.4byte	0
+ 1240 00a2 00000000 		.4byte	0
+ 1241              	.LLST3:
+ 1242 00a6 00000000 		.4byte	.LVL11
+ 1243 00aa 1A000000 		.4byte	.LVL12
+ 1244 00ae 0100     		.2byte	0x1
+ 1245 00b0 50       		.byte	0x50
+ 1246 00b1 1A000000 		.4byte	.LVL12
+ 1247 00b5 42000000 		.4byte	.LVL14
+ 1248 00b9 0100     		.2byte	0x1
+ 1249 00bb 54       		.byte	0x54
+ 1250 00bc 42000000 		.4byte	.LVL14
+ 1251 00c0 46000000 		.4byte	.LVL15
+ 1252 00c4 0100     		.2byte	0x1
+ 1253 00c6 50       		.byte	0x50
+ 1254 00c7 46000000 		.4byte	.LVL15
+ 1255 00cb 4C000000 		.4byte	.LFE3
+ 1256 00cf 0400     		.2byte	0x4
+ 1257 00d1 F3       		.byte	0xf3
+ 1258 00d2 01       		.uleb128 0x1
+ 1259 00d3 50       		.byte	0x50
+ 1260 00d4 9F       		.byte	0x9f
+ 1261 00d5 00000000 		.4byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 26
+
+
+ 1262 00d9 00000000 		.4byte	0
+ 1263              	.LLST4:
+ 1264 00dd 00000000 		.4byte	.LVL11
+ 1265 00e1 23000000 		.4byte	.LVL13-1
+ 1266 00e5 0100     		.2byte	0x1
+ 1267 00e7 51       		.byte	0x51
+ 1268 00e8 23000000 		.4byte	.LVL13-1
+ 1269 00ec 42000000 		.4byte	.LVL14
+ 1270 00f0 0400     		.2byte	0x4
+ 1271 00f2 F3       		.byte	0xf3
+ 1272 00f3 01       		.uleb128 0x1
+ 1273 00f4 51       		.byte	0x51
+ 1274 00f5 9F       		.byte	0x9f
+ 1275 00f6 42000000 		.4byte	.LVL14
+ 1276 00fa 4C000000 		.4byte	.LFE3
+ 1277 00fe 0100     		.2byte	0x1
+ 1278 0100 51       		.byte	0x51
+ 1279 0101 00000000 		.4byte	0
+ 1280 0105 00000000 		.4byte	0
+ 1281              	.LLST5:
+ 1282 0109 00000000 		.4byte	.LVL16
+ 1283 010d 18000000 		.4byte	.LVL18
+ 1284 0111 0100     		.2byte	0x1
+ 1285 0113 50       		.byte	0x50
+ 1286 0114 18000000 		.4byte	.LVL18
+ 1287 0118 4A000000 		.4byte	.LVL20
+ 1288 011c 0100     		.2byte	0x1
+ 1289 011e 54       		.byte	0x54
+ 1290 011f 4A000000 		.4byte	.LVL20
+ 1291 0123 4E000000 		.4byte	.LVL21
+ 1292 0127 0100     		.2byte	0x1
+ 1293 0129 50       		.byte	0x50
+ 1294 012a 4E000000 		.4byte	.LVL21
+ 1295 012e 54000000 		.4byte	.LFE4
+ 1296 0132 0400     		.2byte	0x4
+ 1297 0134 F3       		.byte	0xf3
+ 1298 0135 01       		.uleb128 0x1
+ 1299 0136 50       		.byte	0x50
+ 1300 0137 9F       		.byte	0x9f
+ 1301 0138 00000000 		.4byte	0
+ 1302 013c 00000000 		.4byte	0
+ 1303              	.LLST6:
+ 1304 0140 00000000 		.4byte	.LVL16
+ 1305 0144 10000000 		.4byte	.LVL17
+ 1306 0148 0100     		.2byte	0x1
+ 1307 014a 51       		.byte	0x51
+ 1308 014b 10000000 		.4byte	.LVL17
+ 1309 014f 23000000 		.4byte	.LVL19-1
+ 1310 0153 0100     		.2byte	0x1
+ 1311 0155 53       		.byte	0x53
+ 1312 0156 23000000 		.4byte	.LVL19-1
+ 1313 015a 4A000000 		.4byte	.LVL20
+ 1314 015e 0400     		.2byte	0x4
+ 1315 0160 F3       		.byte	0xf3
+ 1316 0161 01       		.uleb128 0x1
+ 1317 0162 51       		.byte	0x51
+ 1318 0163 9F       		.byte	0x9f
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 27
+
+
+ 1319 0164 4A000000 		.4byte	.LVL20
+ 1320 0168 54000000 		.4byte	.LFE4
+ 1321 016c 0100     		.2byte	0x1
+ 1322 016e 51       		.byte	0x51
+ 1323 016f 00000000 		.4byte	0
+ 1324 0173 00000000 		.4byte	0
+ 1325              	.LLST7:
+ 1326 0177 00000000 		.4byte	.LVL22
+ 1327 017b 04000000 		.4byte	.LVL23
+ 1328 017f 0100     		.2byte	0x1
+ 1329 0181 50       		.byte	0x50
+ 1330 0182 04000000 		.4byte	.LVL23
+ 1331 0186 0C000000 		.4byte	.LFE5
+ 1332 018a 0400     		.2byte	0x4
+ 1333 018c F3       		.byte	0xf3
+ 1334 018d 01       		.uleb128 0x1
+ 1335 018e 50       		.byte	0x50
+ 1336 018f 9F       		.byte	0x9f
+ 1337 0190 00000000 		.4byte	0
+ 1338 0194 00000000 		.4byte	0
+ 1339              	.LLST8:
+ 1340 0198 00000000 		.4byte	.LVL24
+ 1341 019c 04000000 		.4byte	.LVL25
+ 1342 01a0 0100     		.2byte	0x1
+ 1343 01a2 50       		.byte	0x50
+ 1344 01a3 04000000 		.4byte	.LVL25
+ 1345 01a7 06000000 		.4byte	.LFE6
+ 1346 01ab 0400     		.2byte	0x4
+ 1347 01ad F3       		.byte	0xf3
+ 1348 01ae 01       		.uleb128 0x1
+ 1349 01af 50       		.byte	0x50
+ 1350 01b0 9F       		.byte	0x9f
+ 1351 01b1 00000000 		.4byte	0
+ 1352 01b5 00000000 		.4byte	0
+ 1353              		.section	.debug_aranges,"",%progbits
+ 1354 0000 44000000 		.4byte	0x44
+ 1355 0004 0200     		.2byte	0x2
+ 1356 0006 00000000 		.4byte	.Ldebug_info0
+ 1357 000a 04       		.byte	0x4
+ 1358 000b 00       		.byte	0
+ 1359 000c 0000     		.2byte	0
+ 1360 000e 0000     		.2byte	0
+ 1361 0010 00000000 		.4byte	.LFB2
+ 1362 0014 4A000000 		.4byte	.LFE2-.LFB2
+ 1363 0018 00000000 		.4byte	.LFB1
+ 1364 001c 08000000 		.4byte	.LFE1-.LFB1
+ 1365 0020 00000000 		.4byte	.LFB3
+ 1366 0024 4C000000 		.4byte	.LFE3-.LFB3
+ 1367 0028 00000000 		.4byte	.LFB4
+ 1368 002c 54000000 		.4byte	.LFE4-.LFB4
+ 1369 0030 00000000 		.4byte	.LFB5
+ 1370 0034 0C000000 		.4byte	.LFE5-.LFB5
+ 1371 0038 00000000 		.4byte	.LFB6
+ 1372 003c 06000000 		.4byte	.LFE6-.LFB6
+ 1373 0040 00000000 		.4byte	0
+ 1374 0044 00000000 		.4byte	0
+ 1375              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 28
+
+
+ 1376              	.Ldebug_ranges0:
+ 1377 0000 14000000 		.4byte	.LBB2
+ 1378 0004 3C000000 		.4byte	.LBE2
+ 1379 0008 3E000000 		.4byte	.LBB3
+ 1380 000c 40000000 		.4byte	.LBE3
+ 1381 0010 00000000 		.4byte	0
+ 1382 0014 00000000 		.4byte	0
+ 1383 0018 00000000 		.4byte	.LFB2
+ 1384 001c 4A000000 		.4byte	.LFE2
+ 1385 0020 00000000 		.4byte	.LFB1
+ 1386 0024 08000000 		.4byte	.LFE1
+ 1387 0028 00000000 		.4byte	.LFB3
+ 1388 002c 4C000000 		.4byte	.LFE3
+ 1389 0030 00000000 		.4byte	.LFB4
+ 1390 0034 54000000 		.4byte	.LFE4
+ 1391 0038 00000000 		.4byte	.LFB5
+ 1392 003c 0C000000 		.4byte	.LFE5
+ 1393 0040 00000000 		.4byte	.LFB6
+ 1394 0044 06000000 		.4byte	.LFE6
+ 1395 0048 00000000 		.4byte	0
+ 1396 004c 00000000 		.4byte	0
+ 1397              		.section	.debug_line,"",%progbits
+ 1398              	.Ldebug_line0:
+ 1399 0000 3A010000 		.section	.debug_str,"MS",%progbits,1
+ 1399      02008700 
+ 1399      00000201 
+ 1399      FB0E0D00 
+ 1399      01010101 
+ 1400              	.LASF76:
+ 1401 0000 6D5F7772 		.ascii	"m_writeIndex\000"
+ 1401      69746549 
+ 1401      6E646578 
+ 1401      00
+ 1402              	.LASF30:
+ 1403 000d 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1403      52524F52 
+ 1403      5F524541 
+ 1403      445F4F4E 
+ 1403      4C5900
+ 1404              	.LASF16:
+ 1405 0020 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1405      55434345 
+ 1405      535300
+ 1406              	.LASF65:
+ 1407 002b 4C696E65 		.ascii	"LineCoordinates_t\000"
+ 1407      436F6F72 
+ 1407      64696E61 
+ 1407      7465735F 
+ 1407      7400
+ 1408              	.LASF31:
+ 1409 003d 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1409      52524F52 
+ 1409      5F575249 
+ 1409      54455F4F 
+ 1409      4E4C5900 
+ 1410              	.LASF5:
+ 1411 0051 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 29
+
+
+ 1411      7420696E 
+ 1411      7400
+ 1412              	.LASF22:
+ 1413 005b 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1413      52524F52 
+ 1413      5F4F5645 
+ 1413      5252554E 
+ 1413      00
+ 1414              	.LASF34:
+ 1415 006c 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1415      52524F52 
+ 1415      5F575249 
+ 1415      54455F46 
+ 1415      41494C53 
+ 1416              	.LASF70:
+ 1417 0081 636F6C6F 		.ascii	"color\000"
+ 1417      7200
+ 1418              	.LASF19:
+ 1419 0087 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1419      52524F52 
+ 1419      5F5A4552 
+ 1419      4F00
+ 1420              	.LASF33:
+ 1421 0095 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1421      52524F52 
+ 1421      5F524541 
+ 1421      445F4641 
+ 1421      494C5300 
+ 1422              	.LASF89:
+ 1423 00a9 6D656D63 		.ascii	"memcpy\000"
+ 1423      707900
+ 1424              	.LASF60:
+ 1425 00b0 4C494748 		.ascii	"LIGHTGREEN\000"
+ 1425      54475245 
+ 1425      454E00
+ 1426              	.LASF66:
+ 1427 00bb 734C696E 		.ascii	"sLineCoordinates\000"
+ 1427      65436F6F 
+ 1427      7264696E 
+ 1427      61746573 
+ 1427      00
+ 1428              	.LASF49:
+ 1429 00cc 47424C55 		.ascii	"GBLUE\000"
+ 1429      4500
+ 1430              	.LASF12:
+ 1431 00d2 75696E74 		.ascii	"uint8_t\000"
+ 1431      385F7400 
+ 1432              	.LASF39:
+ 1433 00da 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 1433      52524F52 
+ 1433      5F494E56 
+ 1433      414C4944 
+ 1433      5F535441 
+ 1434              	.LASF53:
+ 1435 00f1 59454C4C 		.ascii	"YELLOW\000"
+ 1435      4F5700
+ 1436              	.LASF71:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 30
+
+
+ 1437 00f8 6E756D4C 		.ascii	"numLines\000"
+ 1437      696E6573 
+ 1437      00
+ 1438              	.LASF48:
+ 1439 0101 47524544 		.ascii	"GRED\000"
+ 1439      00
+ 1440              	.LASF79:
+ 1441 0106 52425F44 		.ascii	"RB_Draw_t_clear\000"
+ 1441      7261775F 
+ 1441      745F636C 
+ 1441      65617200 
+ 1442              	.LASF56:
+ 1443 0116 47524159 		.ascii	"GRAY\000"
+ 1443      00
+ 1444              	.LASF21:
+ 1445 011b 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1445      52524F52 
+ 1445      5F52414E 
+ 1445      474500
+ 1446              	.LASF14:
+ 1447 012a 666C6F61 		.ascii	"float\000"
+ 1447      7400
+ 1448              	.LASF61:
+ 1449 0130 4C475241 		.ascii	"LGRAY\000"
+ 1449      5900
+ 1450              	.LASF72:
+ 1451 0136 44726177 		.ascii	"DrawingInstr_t\000"
+ 1451      696E6749 
+ 1451      6E737472 
+ 1451      5F7400
+ 1452              	.LASF41:
+ 1453 0145 52435F45 		.ascii	"RC_ERROR_NOT_IMPLEMENTED\000"
+ 1453      52524F52 
+ 1453      5F4E4F54 
+ 1453      5F494D50 
+ 1453      4C454D45 
+ 1454              	.LASF1:
+ 1455 015e 6C6F6E67 		.ascii	"long long int\000"
+ 1455      206C6F6E 
+ 1455      6720696E 
+ 1455      7400
+ 1456              	.LASF35:
+ 1457 016c 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1457      52524F52 
+ 1457      5F4E4F54 
+ 1457      5F4D4154 
+ 1457      434800
+ 1458              	.LASF40:
+ 1459 017f 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1459      52524F52 
+ 1459      5F554E4B 
+ 1459      4E4F574E 
+ 1459      00
+ 1460              	.LASF7:
+ 1461 0190 6C6F6E67 		.ascii	"long int\000"
+ 1461      20696E74 
+ 1461      00
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 31
+
+
+ 1462              	.LASF23:
+ 1463 0199 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1463      52524F52 
+ 1463      5F554E44 
+ 1463      45525255 
+ 1463      4E00
+ 1464              	.LASF84:
+ 1465 01ab 52425F44 		.ascii	"RB_Draw_t_getCapacity\000"
+ 1465      7261775F 
+ 1465      745F6765 
+ 1465      74436170 
+ 1465      61636974 
+ 1466              	.LASF26:
+ 1467 01c1 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1467      52524F52 
+ 1467      5F425553 
+ 1467      5900
+ 1468              	.LASF81:
+ 1469 01cf 52425F44 		.ascii	"RB_Draw_t_write\000"
+ 1469      7261775F 
+ 1469      745F7772 
+ 1469      69746500 
+ 1470              	.LASF32:
+ 1471 01df 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1471      52524F52 
+ 1471      5F494E56 
+ 1471      414C4944 
+ 1471      00
+ 1472              	.LASF37:
+ 1473 01f0 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1473      52524F52 
+ 1473      5F424144 
+ 1473      5F444154 
+ 1473      4100
+ 1474              	.LASF77:
+ 1475 0202 6D5F6669 		.ascii	"m_fillLevel\000"
+ 1475      6C6C4C65 
+ 1475      76656C00 
+ 1476              	.LASF44:
+ 1477 020e 57484954 		.ascii	"WHITE\000"
+ 1477      4500
+ 1478              	.LASF2:
+ 1479 0214 6C6F6E67 		.ascii	"long double\000"
+ 1479      20646F75 
+ 1479      626C6500 
+ 1480              	.LASF4:
+ 1481 0220 756E7369 		.ascii	"unsigned char\000"
+ 1481      676E6564 
+ 1481      20636861 
+ 1481      7200
+ 1482              	.LASF36:
+ 1483 022e 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1483      52524F52 
+ 1483      5F424144 
+ 1483      5F504152 
+ 1483      414D00
+ 1484              	.LASF3:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 32
+
+
+ 1485 0241 7369676E 		.ascii	"signed char\000"
+ 1485      65642063 
+ 1485      68617200 
+ 1486              	.LASF9:
+ 1487 024d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1487      206C6F6E 
+ 1487      6720756E 
+ 1487      7369676E 
+ 1487      65642069 
+ 1488              	.LASF64:
+ 1489 0264 5446545F 		.ascii	"TFT_colors_t\000"
+ 1489      636F6C6F 
+ 1489      72735F74 
+ 1489      00
+ 1490              	.LASF45:
+ 1491 0271 424C4143 		.ascii	"BLACK\000"
+ 1491      4B00
+ 1492              	.LASF0:
+ 1493 0277 756E7369 		.ascii	"unsigned int\000"
+ 1493      676E6564 
+ 1493      20696E74 
+ 1493      00
+ 1494              	.LASF28:
+ 1495 0284 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1495      52524F52 
+ 1495      5F4F5045 
+ 1495      4E00
+ 1496              	.LASF13:
+ 1497 0292 75696E74 		.ascii	"uint16_t\000"
+ 1497      31365F74 
+ 1497      00
+ 1498              	.LASF68:
+ 1499 029b 636F6F72 		.ascii	"coordinates\000"
+ 1499      64696E61 
+ 1499      74657300 
+ 1500              	.LASF18:
+ 1501 02a7 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1501      52524F52 
+ 1501      5F4E554C 
+ 1501      4C00
+ 1502              	.LASF25:
+ 1503 02b5 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 1503      52524F52 
+ 1503      5F425546 
+ 1503      4645525F 
+ 1503      454D5450 
+ 1504              	.LASF88:
+ 1505 02cb 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\EOS_Assignment_Two\\JS"
+ 1505      73657273 
+ 1505      5C7A616B 
+ 1505      69735C44 
+ 1505      6F63756D 
+ 1506 02f9 4F4E5F50 		.ascii	"ON_Parser\\EOS_Assignment_Two\\Archive\\JSON_Parser"
+ 1506      61727365 
+ 1506      725C454F 
+ 1506      535F4173 
+ 1506      7369676E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 33
+
+
+ 1507 0329 2E637970 		.ascii	".cyprj.Archive02\\JSON_Parser.cydsn\000"
+ 1507      726A2E41 
+ 1507      72636869 
+ 1507      76653032 
+ 1507      5C4A534F 
+ 1508              	.LASF59:
+ 1509 034c 47524159 		.ascii	"GRAYBLUE\000"
+ 1509      424C5545 
+ 1509      00
+ 1510              	.LASF6:
+ 1511 0355 73686F72 		.ascii	"short unsigned int\000"
+ 1511      7420756E 
+ 1511      7369676E 
+ 1511      65642069 
+ 1511      6E7400
+ 1512              	.LASF86:
+ 1513 0368 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1513      43313120 
+ 1513      352E342E 
+ 1513      31203230 
+ 1513      31363036 
+ 1514 039b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1514      20726576 
+ 1514      6973696F 
+ 1514      6E203233 
+ 1514      37373135 
+ 1515 03ce 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1515      66756E63 
+ 1515      74696F6E 
+ 1515      2D736563 
+ 1515      74696F6E 
+ 1516              	.LASF11:
+ 1517 03f6 63686172 		.ascii	"char\000"
+ 1517      00
+ 1518              	.LASF55:
+ 1519 03fb 42525245 		.ascii	"BRRED\000"
+ 1519      4400
+ 1520              	.LASF20:
+ 1521 0401 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 1521      52524F52 
+ 1521      5F4D454D 
+ 1521      4F525900 
+ 1522              	.LASF24:
+ 1523 0411 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1523      52524F52 
+ 1523      5F425546 
+ 1523      4645525F 
+ 1523      46554C4C 
+ 1524              	.LASF80:
+ 1525 0426 52425F44 		.ascii	"RB_Draw_t_init\000"
+ 1525      7261775F 
+ 1525      745F696E 
+ 1525      697400
+ 1526              	.LASF67:
+ 1527 0435 73447261 		.ascii	"sDrawingInstr\000"
+ 1527      77696E67 
+ 1527      496E7374 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 34
+
+
+ 1527      7200
+ 1528              	.LASF85:
+ 1529 0443 52425F44 		.ascii	"RB_Draw_t_getNumberOfStoredElements\000"
+ 1529      7261775F 
+ 1529      745F6765 
+ 1529      744E756D 
+ 1529      6265724F 
+ 1530              	.LASF58:
+ 1531 0467 4C494748 		.ascii	"LIGHTBLUE\000"
+ 1531      54424C55 
+ 1531      4500
+ 1532              	.LASF82:
+ 1533 0471 64617461 		.ascii	"data\000"
+ 1533      00
+ 1534              	.LASF63:
+ 1535 0476 4C42424C 		.ascii	"LBBLUE\000"
+ 1535      554500
+ 1536              	.LASF8:
+ 1537 047d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1537      20756E73 
+ 1537      69676E65 
+ 1537      6420696E 
+ 1537      7400
+ 1538              	.LASF15:
+ 1539 048f 646F7562 		.ascii	"double\000"
+ 1539      6C6500
+ 1540              	.LASF42:
+ 1541 0496 52435F54 		.ascii	"RC_TRIGGER\000"
+ 1541      52494747 
+ 1541      455200
+ 1542              	.LASF50:
+ 1543 04a1 4D414745 		.ascii	"MAGENTA\000"
+ 1543      4E544100 
+ 1544              	.LASF29:
+ 1545 04a9 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 1545      52524F52 
+ 1545      5F434845 
+ 1545      434B5355 
+ 1545      4D00
+ 1546              	.LASF69:
+ 1547 04bb 6C696E65 		.ascii	"lines\000"
+ 1547      7300
+ 1548              	.LASF73:
+ 1549 04c1 52425F44 		.ascii	"RB_Draw_data_t\000"
+ 1549      7261775F 
+ 1549      64617461 
+ 1549      5F7400
+ 1550              	.LASF57:
+ 1551 04d0 4441524B 		.ascii	"DARKBLUE\000"
+ 1551      424C5545 
+ 1551      00
+ 1552              	.LASF83:
+ 1553 04d9 52425F44 		.ascii	"RB_Draw_t_read\000"
+ 1553      7261775F 
+ 1553      745F7265 
+ 1553      616400
+ 1554              	.LASF54:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 35
+
+
+ 1555 04e8 42524F57 		.ascii	"BROWN\000"
+ 1555      4E00
+ 1556              	.LASF87:
+ 1557 04ee 736F7572 		.ascii	"source\\bsw\\cdd\\ringBufferDrawing.c\000"
+ 1557      63655C62 
+ 1557      73775C63 
+ 1557      64645C72 
+ 1557      696E6742 
+ 1558              	.LASF10:
+ 1559 0511 73697A65 		.ascii	"sizetype\000"
+ 1559      74797065 
+ 1559      00
+ 1560              	.LASF62:
+ 1561 051a 4C475241 		.ascii	"LGRAYBLUE\000"
+ 1561      59424C55 
+ 1561      4500
+ 1562              	.LASF38:
+ 1563 0524 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 1563      52524F52 
+ 1563      5F43414E 
+ 1563      43454C45 
+ 1563      4400
+ 1564              	.LASF74:
+ 1565 0536 6D5F6461 		.ascii	"m_data\000"
+ 1565      746100
+ 1566              	.LASF17:
+ 1567 053d 52435F45 		.ascii	"RC_ERROR\000"
+ 1567      52524F52 
+ 1567      00
+ 1568              	.LASF51:
+ 1569 0546 47524545 		.ascii	"GREEN\000"
+ 1569      4E00
+ 1570              	.LASF52:
+ 1571 054c 4359414E 		.ascii	"CYAN\000"
+ 1571      00
+ 1572              	.LASF46:
+ 1573 0551 424C5545 		.ascii	"BLUE\000"
+ 1573      00
+ 1574              	.LASF75:
+ 1575 0556 6D5F7265 		.ascii	"m_readIndex\000"
+ 1575      6164496E 
+ 1575      64657800 
+ 1576              	.LASF47:
+ 1577 0562 42524544 		.ascii	"BRED\000"
+ 1577      00
+ 1578              	.LASF43:
+ 1579 0567 52435F74 		.ascii	"RC_t\000"
+ 1579      00
+ 1580              	.LASF78:
+ 1581 056c 52425F44 		.ascii	"RB_Draw_t\000"
+ 1581      7261775F 
+ 1581      7400
+ 1582              	.LASF27:
+ 1583 0576 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 1583      52524F52 
+ 1583      5F54494D 
+ 1583      455F4F55 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccbrIcRI.s 			page 36
+
+
+ 1583      5400
+ 1584              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

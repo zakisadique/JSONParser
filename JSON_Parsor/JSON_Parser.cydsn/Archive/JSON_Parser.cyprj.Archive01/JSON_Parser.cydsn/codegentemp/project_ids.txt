@@ -1,0 +1,6 @@
+C:\Users\zakis\Documents\EOS_Assignment_Two\JSON_Parser\EOS_Assignment_Two\Archive\JSON_Parser.cyprj.Archive02\JSON_Parser.cydsn\Archive\JSON_Parser.cyprj.Archive01\JSON_Parser.cydsn\JSON_Parser.cyprj|b0de89e7-1eb7-45e0-b805-1e1143230fd1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2572f56b-8ff4-4ffc-b131-f72796beff67
+C:\Users\zakis\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|75201f7e-a796-4999-8388-a9872cc1ff0b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|32ba5a04-ecd9-4fc6-9879-434fac8d206b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c0acdd93-caa1-4a2a-b10e-b9c0b171f538
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|bf40d408-3c12-472a-807c-5b3d71c4de4d
